@@ -1369,6 +1369,10 @@ func (d *VirtualMachineController) calculateLiveMigrationCondition(vmi *v1.Virtu
 		return newNonMigratableCondition("VMI uses SEV", v1.VirtualMachineInstanceReasonSEVNotMigratable), isBlockMigration
 	}
 
+	if util.IsTDXVMI(vmi) {
+		return newNonMigratableCondition("VMI uses TDX", v1.VirtualMachineInstanceReasonTDXNotMigratable), isBlockMigration
+	}
+
 	if tscRequirement := topology.GetTscFrequencyRequirement(vmi); !topology.AreTSCFrequencyTopologyHintsDefined(vmi) && tscRequirement.Type == topology.RequiredForMigration {
 		return newNonMigratableCondition(tscRequirement.Reason, v1.VirtualMachineInstanceReasonNoTSCFrequencyMigratable), isBlockMigration
 	}
