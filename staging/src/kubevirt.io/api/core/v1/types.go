@@ -870,6 +870,9 @@ const (
 	// SEVLabel marks the node as capable of running workloads with SEV
 	SEVLabel string = "kubevirt.io/sev"
 
+	// TDXLabel marks the node as capable of running workloads with TDX
+	TDXLabel string = "kubevirt.io/tdx"
+
 	// InstancetypeAnnotation is the name of a VirtualMachineInstancetype
 	InstancetypeAnnotation string = "kubevirt.io/instancetype-name"
 

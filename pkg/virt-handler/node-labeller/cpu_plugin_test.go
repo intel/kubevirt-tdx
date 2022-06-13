@@ -186,6 +186,24 @@ var _ = Describe("Node-labeller config", func() {
 		})
 	})
 
+	Context("return correct TDX capabilities", func() {
+		It("when TDX is supported", func() {
+			nlController.domCapabilitiesFileName = "domcapabilities_tdx.xml"
+			err := nlController.loadDomCapabilities()
+			Expect(err).ToNot(HaveOccurred())
+
+			Expect(nlController.TDX.Supported).To(Equal("yes"))
+		})
+
+		It("when TDX is not supported", func() {
+			nlController.domCapabilitiesFileName = "domcapabilities_notdx.xml"
+			err := nlController.loadDomCapabilities()
+			Expect(err).ToNot(HaveOccurred())
+
+			Expect(nlController.TDX.Supported).To(Equal("no"))
+		})
+	})
+
 	It("Make sure proper labels are removed on removeLabellerLabels()", func() {
 		node := &k8sv1.Node{
 			ObjectMeta: metav1.ObjectMeta{

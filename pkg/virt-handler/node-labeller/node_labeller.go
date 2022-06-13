@@ -77,6 +77,7 @@ type NodeLabeller struct {
 	capabilities            *api.Capabilities
 	hostCPUModel            hostCPUModel
 	SEV                     SEVConfiguration
+	TDX                     TDXConfiguration
 }
 
 func NewNodeLabeller(clusterConfig *virtconfig.ClusterConfig, clientset kubecli.KubevirtClient, host, namespace string) (*NodeLabeller, error) {
@@ -300,6 +301,10 @@ func (n *NodeLabeller) prepareLabels(cpuModels []string, cpuFeatures cpuFeatures
 
 	if n.SEV.Supported == "yes" {
 		newLabels[kubevirtv1.SEVLabel] = ""
+	}
+
+	if n.TDX.Supported == "yes" {
+		newLabels[kubevirtv1.TDXLabel] = ""
 	}
 
 	return newLabels

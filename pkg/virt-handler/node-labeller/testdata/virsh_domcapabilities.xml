@@ -23,5 +23,6 @@
           <cbitpos>47</cbitpos>
           <reducedPhysBits>1</reducedPhysBits>
         </sev>
+        <tdx supported='yes'/>
     </features>
 </domainCapabilities>

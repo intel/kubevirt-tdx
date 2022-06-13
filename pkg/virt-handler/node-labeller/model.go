@@ -40,6 +40,7 @@ type cpuInfo struct {
 type HostDomCapabilities struct {
 	CPU CPU              `xml:"cpu"`
 	SEV SEVConfiguration `xml:"features>sev"`
+	TDX TDXConfiguration `xml:"features>tdx"`
 }
 
 // CPU represents slice of cpu modes
@@ -94,4 +95,8 @@ type SEVConfiguration struct {
 	Supported       string `xml:"supported,attr"`
 	Cbitpos         string `xml:"cbitpos"`
 	ReducedPhysBits string `xml:"reducedPhysBits"`
+}
+
+type TDXConfiguration struct {
+	Supported string `xml:"supported,attr"`
 }
