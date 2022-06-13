@@ -1112,4 +1112,25 @@ var _ = Describe("VirtualMachineInstance Mutator", func() {
 		_, vmiSpec, _ := getMetaSpecStatusFromAdmit()
 		Expect(vmiSpec.NodeSelector).To(BeEquivalentTo(map[string]string{v1.NodeSchedulable: "true", v1.SEVLabel: ""}))
 	})
+
+	It("should add TDX node label selector with TDX workload", func() {
+		vmi.Spec.Domain.LaunchSecurity = &v1.LaunchSecurity{TDX: &v1.TDX{}}
+		_, vmiSpec, _ := getMetaSpecStatusFromAdmit()
+		Expect(vmiSpec.NodeSelector).NotTo(BeNil())
+		Expect(vmiSpec.NodeSelector).To(BeEquivalentTo(map[string]string{v1.TDXLabel: ""}))
+	})
+
+	It("should not add TDX node label selector when no TDX workload", func() {
+		vmi.Spec.Domain.LaunchSecurity = &v1.LaunchSecurity{}
+		vmi.Spec.NodeSelector = map[string]string{v1.NodeSchedulable: "true"}
+		_, vmiSpec, _ := getMetaSpecStatusFromAdmit()
+		Expect(vmiSpec.NodeSelector).To(BeEquivalentTo(map[string]string{v1.NodeSchedulable: "true"}))
+	})
+
+	It("should not overwrite existing node label selectors with TDX workload", func() {
+		vmi.Spec.Domain.LaunchSecurity = &v1.LaunchSecurity{TDX: &v1.TDX{}}
+		vmi.Spec.NodeSelector = map[string]string{v1.NodeSchedulable: "true"}
+		_, vmiSpec, _ := getMetaSpecStatusFromAdmit()
+		Expect(vmiSpec.NodeSelector).To(BeEquivalentTo(map[string]string{v1.NodeSchedulable: "true", v1.TDXLabel: ""}))
+	})
 })
