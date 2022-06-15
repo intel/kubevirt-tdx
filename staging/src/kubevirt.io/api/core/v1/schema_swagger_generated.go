@@ -359,10 +359,15 @@ func (DiskTarget) SwaggerDoc() map[string]string {
 func (LaunchSecurity) SwaggerDoc() map[string]string {
 	return map[string]string{
 		"sev": "AMD Secure Encrypted Virtualization (SEV).",
+		"tdx": "Intel Trust Domain Extensions (TDX).",
 	}
 }
 
 func (SEV) SwaggerDoc() map[string]string {
+	return map[string]string{}
+}
+
+func (TDX) SwaggerDoc() map[string]string {
 	return map[string]string{}
 }
 

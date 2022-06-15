@@ -18117,11 +18117,17 @@ func schema_kubevirtio_api_core_v1_LaunchSecurity(ref common.ReferenceCallback) 
 							Ref:         ref("kubevirt.io/api/core/v1.SEV"),
 						},
 					},
+					"tdx": {
+						SchemaProps: spec.SchemaProps{
+							Description: "Intel Trust Domain Extensions (TDX).",
+							Ref:         ref("kubevirt.io/api/core/v1.TDX"),
+						},
+					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"kubevirt.io/api/core/v1.SEV"},
+			"kubevirt.io/api/core/v1.SEV", "kubevirt.io/api/core/v1.TDX"},
 	}
 }
 
@@ -19952,6 +19958,16 @@ func schema_kubevirtio_api_core_v1_TLSConfiguration(ref common.ReferenceCallback
 						},
 					},
 				},
+			},
+		},
+	}
+}
+
+func schema_kubevirtio_api_core_v1_TDX(ref common.ReferenceCallback) common.OpenAPIDefinition {
+	return common.OpenAPIDefinition{
+		Schema: spec.Schema{
+			SchemaProps: spec.SchemaProps{
+				Type: []string{"object"},
 			},
 		},
 	}
