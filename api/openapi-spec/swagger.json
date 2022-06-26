@@ -16121,6 +16121,15 @@
      }
     }
    },
+   "v1.FeatureIOAPIC": {
+    "type": "object",
+    "properties": {
+     "driver": {
+      "description": "Set the guest I/O APIO mode.",
+      "type": "string"
+     }
+    }
+   },
    "v1.FeatureKVM": {
     "type": "object",
     "properties": {
@@ -16181,6 +16190,10 @@
      "hyperv": {
       "description": "Defaults to the machine type setting.",
       "$ref": "#/definitions/v1.FeatureHyperv"
+     },
+     "ioapic": {
+      "description": "Tune the guest I/O APIC mode. Defaults to kvm for the KVM domain.",
+      "$ref": "#/definitions/v1.FeatureIOAPIC"
      },
      "kvm": {
       "description": "Configure how KVM presence is exposed to the guest.",

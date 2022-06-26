@@ -538,6 +538,7 @@ func (Features) SwaggerDoc() map[string]string {
 		"smm":        "SMM enables/disables System Management Mode.\nTSEG not yet implemented.\n+optional",
 		"kvm":        "Configure how KVM presence is exposed to the guest.\n+optional",
 		"pvspinlock": "Notify the guest that the host supports paravirtual spinlocks.\nFor older kernels this feature should be explicitly disabled.\n+optional",
+		"ioapic":     "Tune the guest I/O APIC mode.\nDefaults to kvm for the KVM domain.\n+optional",
 	}
 }
 
@@ -563,6 +564,12 @@ func (FeatureSpinlocks) SwaggerDoc() map[string]string {
 	return map[string]string{
 		"enabled":   "Enabled determines if the feature should be enabled or disabled on the guest.\nDefaults to true.\n+optional",
 		"spinlocks": "Retries indicates the number of retries.\nMust be a value greater or equal 4096.\nDefaults to 4096.\n+optional",
+	}
+}
+
+func (FeatureIOAPIC) SwaggerDoc() map[string]string {
+	return map[string]string{
+		"driver": "Set the guest I/O APIO mode.",
 	}
 }
 

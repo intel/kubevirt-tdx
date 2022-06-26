@@ -1000,6 +1000,10 @@ type Features struct {
 	// For older kernels this feature should be explicitly disabled.
 	// +optional
 	Pvspinlock *FeatureState `json:"pvspinlock,omitempty"`
+	// Tune the guest I/O APIC mode.
+	// Defaults to kvm for the KVM domain.
+	// +optional
+	IOAPIC *FeatureIOAPIC `json:"ioapic,omitempty"`
 }
 
 type SyNICTimer struct {
@@ -1036,6 +1040,11 @@ type FeatureSpinlocks struct {
 	// Defaults to 4096.
 	// +optional
 	Retries *uint32 `json:"spinlocks,omitempty"`
+}
+
+type FeatureIOAPIC struct {
+	// Set the guest I/O APIO mode.
+	Driver string `json:"driver,omitempty"`
 }
 
 type FeatureVendorID struct {
