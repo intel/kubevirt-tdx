@@ -16199,6 +16199,10 @@
       "description": "Configure how KVM presence is exposed to the guest.",
       "$ref": "#/definitions/v1.FeatureKVM"
      },
+     "pic": {
+      "description": "PIC enables/disables legacy Programmable Interrupt Controller support.",
+      "$ref": "#/definitions/v1.FeatureState"
+     },
      "pvspinlock": {
       "description": "Notify the guest that the host supports paravirtual spinlocks. For older kernels this feature should be explicitly disabled.",
       "$ref": "#/definitions/v1.FeatureState"

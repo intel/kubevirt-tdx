@@ -3278,6 +3278,9 @@ var _ = Describe("Converter", func() {
 				IOAPIC: &v1.FeatureIOAPIC{
 					Driver: "qemu",
 				},
+				PIC: &v1.FeatureState{
+					Enabled: pointer.BoolPtr(false),
+				},
 			}
 			vmi.Spec.Domain.Firmware = &v1.Firmware{
 				Bootloader: &v1.Bootloader{
@@ -3300,6 +3303,7 @@ var _ = Describe("Converter", func() {
 			Expect(domain.Spec.LaunchSecurity.Type).To(Equal("tdx"))
 			Expect(domain.Spec.LaunchSecurity.Policy).To(Equal(TDXPolicyNoDebug))
 			Expect(domain.Spec.Features.IOAPIC.Driver).To(Equal("qemu"))
+			Expect(domain.Spec.Features.PIC.State).To(Equal("off"))
 		})
 	})
 
