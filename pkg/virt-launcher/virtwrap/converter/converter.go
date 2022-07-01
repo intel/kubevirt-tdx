@@ -1267,11 +1267,18 @@ func Convert_v1_VirtualMachineInstance_To_api_Domain(vmi *v1.VirtualMachineInsta
 		}
 
 		if vmi.Spec.Domain.Firmware.Bootloader != nil && vmi.Spec.Domain.Firmware.Bootloader.EFI != nil {
+			var loaderType string
+			if vmi.Spec.Domain.LaunchSecurity != nil && vmi.Spec.Domain.LaunchSecurity.TDX != nil {
+				loaderType = "generic"
+			} else {
+				loaderType = "pflash"
+			}
+
 			domain.Spec.OS.BootLoader = &api.Loader{
 				Path:     c.EFIConfiguration.EFICode,
 				ReadOnly: "yes",
 				Secure:   boolToYesNo(&c.EFIConfiguration.SecureLoader, false),
-				Type:     "pflash",
+				Type:     loaderType,
 			}
 
 			domain.Spec.OS.NVRam = &api.NVRam{
