@@ -54,7 +54,7 @@ testimage_main="
   iputils
   nmap-ncat
   procps-ng
-  qemu-img-${QEMU_VERSION}
+  intel-mvp-spr-qemu-img-${QEMU_VERSION}
   tar
   util-linux
   which
@@ -62,7 +62,7 @@ testimage_main="
 
 # create a rpmtree for libvirt-devel. libvirt-devel is needed for compilation and unit-testing.
 libvirtdevel_main="
-  libvirt-devel-${LIBVIRT_VERSION}
+  intel-mvp-tdx-libvirt-devel-${LIBVIRT_VERSION}
 "
 libvirtdevel_extra="
   keyutils-libs
@@ -83,14 +83,14 @@ sandboxroot_main="
 
 # create a rpmtree for virt-launcher and virt-handler. This is the OS for our node-components.
 launcherbase_main="
-  libvirt-client-${LIBVIRT_VERSION}
-  libvirt-daemon-driver-qemu-${LIBVIRT_VERSION}
+  intel-mvp-tdx-libvirt-client-${LIBVIRT_VERSION}
+  intel-mvp-tdx-libvirt-daemon-driver-qemu-${LIBVIRT_VERSION}
   passt-${PASST_VERSION}
-  qemu-kvm-core-${QEMU_VERSION}
+  intel-mvp-spr-qemu-kvm-core-${QEMU_VERSION}
 "
 launcherbase_x86_64="
-  edk2-ovmf-${EDK2_VERSION}
-  qemu-kvm-device-usb-redirect-${QEMU_VERSION}
+  intel-mvp-tdx-tdvf-${EDK2_VERSION}
+  intel-mvp-spr-qemu-kvm-device-usb-redirect-${QEMU_VERSION}
   seabios-${SEABIOS_VERSION}
 "
 launcherbase_aarch64="
@@ -111,7 +111,7 @@ launcherbase_extra="
 "
 
 handlerbase_main="
-  qemu-img-${QEMU_VERSION}
+  intel-mvp-spr-qemu-img-${QEMU_VERSION}
 "
 handlerbase_extra="
   findutils
@@ -130,13 +130,13 @@ libguestfstools_main="
   file
   libguestfs-${LIBGUESTFS_VERSION}
   guestfs-tools-${GUESTFSTOOLS_VERSION}
-  libvirt-daemon-driver-qemu-${LIBVIRT_VERSION}
-  qemu-kvm-core-${QEMU_VERSION}
+  intel-mvp-tdx-libvirt-daemon-driver-qemu-${LIBVIRT_VERSION}
+  intel-mvp-spr-qemu-kvm-core-${QEMU_VERSION}
   seabios-${SEABIOS_VERSION}
   tar
 "
 libguestfstools_x86_64="
-  edk2-ovmf-${EDK2_VERSION}
+  intel-mvp-tdx-tdvf-${EDK2_VERSION}
 "
 libguestfstools_extra="
   selinux-policy
@@ -232,7 +232,7 @@ if [ -z "${SINGLE_ARCH}" ] || [ "${SINGLE_ARCH}" == "x86_64" ]; then
         --force-ignore-with-dependencies '^(kernel-|linux-firmware)' \
         --force-ignore-with-dependencies '^(python[3]{0,1}-)' \
         --force-ignore-with-dependencies '^mozjs60' \
-        --force-ignore-with-dependencies '^(libvirt-daemon-kvm|swtpm)' \
+        --force-ignore-with-dependencies '^(intel-mvp-tdx-libvirt-daemon-kvm|swtpm)' \
         --force-ignore-with-dependencies '^(man-db|mandoc)' \
         --force-ignore-with-dependencies '^dbus'
 

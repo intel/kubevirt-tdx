@@ -832,8 +832,8 @@ rpmtree(
         "/var/run": "../run",
         "/usr/sbin/iptables": "/usr/sbin/iptables-legacy",
         "/usr/bin/nc": "/usr/bin/ncat",
-        # Create a symlink to OVMF binary with SEV support (edk2 rpm does not do that for unknown reason)
-        "/usr/share/OVMF/OVMF_CODE.cc.fd": "../edk2/ovmf/OVMF_CODE.cc.fd",
+        "/usr/share/OVMF/OVMF_CODE.fd": "../qemu/OVMF_CODE.fd",
+        "/usr/share/OVMF/OVMF_VARS.fd": "../qemu/OVMF_VARS.fd",
     },
     visibility = ["//visibility:public"],
 )
