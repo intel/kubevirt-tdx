@@ -1734,29 +1734,48 @@ func Convert_v1_VirtualMachineInstance_To_api_Domain(vmi *v1.VirtualMachineInsta
 			Driver: controllerDriver,
 		})
 
-		var serialPort uint = 0
-		var serialType string = "serial"
-		domain.Spec.Devices.Consoles = []api.Console{
-			{
-				Type: "pty",
-				Target: &api.ConsoleTarget{
-					Type: &serialType,
-					Port: &serialPort,
+		if vmi.Spec.Domain.LaunchSecurity == nil || vmi.Spec.Domain.LaunchSecurity.TDX == nil {
+			var serialPort uint = 0
+			var serialType string = "serial"
+			domain.Spec.Devices.Consoles = []api.Console{
+				{
+					Type: "pty",
+					Target: &api.ConsoleTarget{
+						Type: &serialType,
+						Port: &serialPort,
+					},
 				},
-			},
-		}
+			}
 
-		domain.Spec.Devices.Serials = []api.Serial{
-			{
-				Type: "unix",
-				Target: &api.SerialTarget{
-					Port: &serialPort,
+			domain.Spec.Devices.Serials = []api.Serial{
+				{
+					Type: "unix",
+					Target: &api.SerialTarget{
+						Port: &serialPort,
+					},
+					Source: &api.SerialSource{
+						Mode: "bind",
+						Path: fmt.Sprintf("/var/run/kubevirt-private/%s/virt-serial%d", vmi.ObjectMeta.UID, serialPort),
+					},
 				},
-				Source: &api.SerialSource{
-					Mode: "bind",
-					Path: fmt.Sprintf("/var/run/kubevirt-private/%s/virt-serial%d", vmi.ObjectMeta.UID, serialPort),
+			}
+		} else {
+			// Only virtio console was allowed in TDX guest
+			var consolePort uint = 0
+			var consoleType string = "virtio"
+			domain.Spec.Devices.Consoles = []api.Console{
+				{
+					Type: "unix",
+					Target: &api.ConsoleTarget{
+						Type: &consoleType,
+						Port: &consolePort,
+					},
+					Source: &api.ConsoleSource{
+						Mode: "bind",
+						Path: fmt.Sprintf("/var/run/kubevirt-private/%s/virt-serial%d", vmi.ObjectMeta.UID, consolePort),
+					},
 				},
-			},
+			}
 		}
 	}
 
