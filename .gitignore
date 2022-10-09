@@ -46,3 +46,5 @@ hack/builder/manifests/
 .bazeldnf/
 user.bazelrc
 .vscode/
+tags
+custom-repo.yaml
