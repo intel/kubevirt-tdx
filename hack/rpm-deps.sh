@@ -54,7 +54,7 @@ testimage_main="
   iputils
   nmap-ncat
   procps-ng
-  intel-mvp-spr-qemu-img-${QEMU_VERSION}
+  intel-mvp-tdx-qemu-img-${QEMU_VERSION}
   tar
   util-linux
   which
@@ -131,7 +131,7 @@ libguestfstools_main="
   libguestfs-${LIBGUESTFS_VERSION}
   guestfs-tools-${GUESTFSTOOLS_VERSION}
   intel-mvp-tdx-libvirt-daemon-driver-qemu-${LIBVIRT_VERSION}
-  intel-mvp-spr-qemu-kvm-core-${QEMU_VERSION}
+  intel-mvp-tdx-qemu-kvm-core-${QEMU_VERSION}
   seabios-${SEABIOS_VERSION}
   tar
 "
