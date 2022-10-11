@@ -85,12 +85,12 @@ sandboxroot_main="
 launcherbase_main="
   intel-mvp-tdx-libvirt-client-${LIBVIRT_VERSION}
   intel-mvp-tdx-libvirt-daemon-driver-qemu-${LIBVIRT_VERSION}
+  intel-mvp-tdx-qemu-kvm-core-${QEMU_VERSION}
   passt-${PASST_VERSION}
-  intel-mvp-spr-qemu-kvm-core-${QEMU_VERSION}
 "
 launcherbase_x86_64="
-  intel-mvp-tdx-tdvf-${EDK2_VERSION}
-  intel-mvp-spr-qemu-kvm-device-usb-redirect-${QEMU_VERSION}
+  intel-mvp-ovmf-${EDK2_VERSION}
+  intel-mvp-tdx-qemu-kvm-hw-usbredir-${QEMU_VERSION}
   seabios-${SEABIOS_VERSION}
 "
 launcherbase_aarch64="
@@ -111,7 +111,7 @@ launcherbase_extra="
 "
 
 handlerbase_main="
-  intel-mvp-spr-qemu-img-${QEMU_VERSION}
+  intel-mvp-tdx-qemu-img-${QEMU_VERSION}
 "
 handlerbase_extra="
   findutils
@@ -136,7 +136,7 @@ libguestfstools_main="
   tar
 "
 libguestfstools_x86_64="
-  intel-mvp-tdx-tdvf-${EDK2_VERSION}
+  intel-mvp-ovmf-${EDK2_VERSION}
 "
 libguestfstools_extra="
   selinux-policy

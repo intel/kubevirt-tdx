@@ -55,6 +55,7 @@ var nodeLabellerLabels = []string{
 	kubevirtv1.HypervLabel,
 	kubevirtv1.RealtimeLabel,
 	kubevirtv1.SEVLabel,
+	kubevirtv1.TDXLabel,
 	kubevirtv1.HostModelCPULabel,
 	kubevirtv1.HostModelRequiredFeaturesLabel,
 }

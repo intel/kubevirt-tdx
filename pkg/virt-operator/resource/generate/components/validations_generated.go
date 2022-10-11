@@ -15501,6 +15501,9 @@ var CRDsValidation map[string]string = map[string]string{
             sev:
               description: AMD Secure Encrypted Virtualization (SEV).
               type: object
+            tdx:
+              description: Intel Trust Domain Extensions (TDX).
+              type: object
           type: object
         memory:
           description: Required Memory related attributes of the instancetype.

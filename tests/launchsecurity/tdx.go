@@ -15,27 +15,31 @@ import (
 var _ = Describe("[sig-compute]Intel Trust Domain Extensions (TDX)", func() {
 	BeforeEach(func() {
 		checks.SkipTestIfNoFeatureGate(virtconfig.WorkloadEncryptionTDX)
-		checks.SkipTestIfNotTDXCapable()
-		tests.BeforeTestCleanup()
 	})
 
-	It("should start a TDX VM", func() {
-		const secureBoot = false
-		vmi := libvmi.NewFedora(libvmi.WithUefi(secureBoot), libvmi.WithTDX())
-		vmi = tests.RunVMIAndExpectLaunch(vmi, 240)
+	Context("lifecycle", func() {
+		BeforeEach(func() {
+			checks.SkipTestIfNotTDXCapable()
+		})
 
-		By("Expecting the VirtualMachineInstance console")
-		Expect(console.LoginToFedora(vmi)).To(Succeed())
+		It("should start a TDX VM", func() {
+			const secureBoot = false
+			vmi := libvmi.NewFedora(libvmi.WithUefi(secureBoot), libvmi.WithTDX())
+			vmi = tests.RunVMIAndExpectLaunch(vmi, 240)
 
-		By("Verifying that TDX is enabled in the guest")
-		err := console.SafeExpectBatch(vmi, []expect.Batcher{
-			&expect.BSnd{S: "\n"},
-			&expect.BExp{R: console.PromptExpression},
-			&expect.BSnd{S: "dmesg | grep --color=never tdx\n"},
-			&expect.BExp{R: "tdx: Guest initialized"},
-			&expect.BSnd{S: "\n"},
-			&expect.BExp{R: console.PromptExpression},
-		}, 30)
-		Expect(err).ToNot(HaveOccurred())
+			By("Expecting the VirtualMachineInstance console")
+			Expect(console.LoginToFedora(vmi)).To(Succeed())
+
+			By("Verifying that TDX is enabled in the guest")
+			err := console.SafeExpectBatch(vmi, []expect.Batcher{
+				&expect.BSnd{S: "\n"},
+				&expect.BExp{R: console.PromptExpression},
+				&expect.BSnd{S: "dmesg | grep --color=never tdx\n"},
+				&expect.BExp{R: "tdx: Guest initialized"},
+				&expect.BSnd{S: "\n"},
+				&expect.BExp{R: console.PromptExpression},
+			}, 30)
+			Expect(err).ToNot(HaveOccurred())
+		})
 	})
 })
