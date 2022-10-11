@@ -351,6 +351,11 @@ func GetMemoryOverhead(vmi *v1.VirtualMachineInstance, cpuArch string) *resource
 		overhead.Add(resource.MustParse("256Mi"))
 	}
 
+	// Consider memory overhead for TDX guests.
+	if util.IsTDXVMI(vmi) {
+		overhead.Add(resource.MustParse("256Mi"))
+	}
+
 	// Having a TPM device will spawn a swtpm process
 	// In `ps`, swtpm has VSZ of 53808 and RSS of 3496, so 53Mi should do
 	if vmi.Spec.Domain.Devices.TPM != nil {
