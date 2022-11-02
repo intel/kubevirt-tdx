@@ -6,14 +6,12 @@ source hack/common.sh
 source hack/bootstrap.sh
 source hack/config.sh
 
-LIBVIRT_VERSION=${LIBVIRT_VERSION:-0:8.7.0-1.el9}
-QEMU_VERSION=${QEMU_VERSION:-17:7.1.0-3.el9}
-SEABIOS_VERSION=${SEABIOS_VERSION:-0:1.16.0-4.el9}
-EDK2_VERSION=${EDK2_VERSION:-0:20220826gitba0e0e4c6a-1.el9}
-LIBGUESTFS_VERSION=${LIBGUESTFS_VERSION:-1:1.48.4-2.el9}
-GUESTFSTOOLS_VERSION=${GUESTFSTOOLS_VERSION:-0:1.48.2-7.el9}
-PASST_VERSION=${PASST_VERSION:-0:0^20221026.gf212044-1.el9}
-VIRTIOFSD_VERSION=${VIRTIOFSD_VERSION:-0:1.4.0-1.el9}
+LIBVIRT_VERSION=${LIBVIRT_VERSION:-0:8.0.0-2.module_el8.6.0+1087+b42c8331}
+QEMU_VERSION=${QEMU_VERSION:-15:6.2.0-5.module_el8.6.0+1087+b42c8331}
+SEABIOS_VERSION=${SEABIOS_VERSION:-0:1.15.0-1.module_el8.6.0+1087+b42c8331}
+EDK2_VERSION=${EDK2_VERSION:-0:20220126gitbb1bba3d77-2.el8}
+LIBGUESTFS_VERSION=${LIBGUESTFS_VERSION:-1:1.44.0-5.module_el8.6.0+1087+b42c8331}
+PASST_VERSION=${PASST_VERSION:-0:0.git.2022_08_29.60ffc5b-1.el8}
 SINGLE_ARCH=${SINGLE_ARCH:-""}
 
 bazeldnf_repos="--repofile rpm/repo.yaml"
@@ -38,7 +36,7 @@ fi
 
 centos_main="
   acl
-  curl-minimal
+  curl
   vim-minimal
 "
 centos_extra="
@@ -77,7 +75,7 @@ sandboxroot_main="
   findutils
   gcc
   glibc-static
-  python3
+  python36
   sssd-client
 "
 
@@ -85,11 +83,11 @@ sandboxroot_main="
 launcherbase_main="
   intel-mvp-tdx-libvirt-client-${LIBVIRT_VERSION}
   intel-mvp-tdx-libvirt-daemon-driver-qemu-${LIBVIRT_VERSION}
-  intel-mvp-tdx-qemu-kvm-core-${QEMU_VERSION}
   passt-${PASST_VERSION}
+  intel-mvp-tdx-qemu-kvm-core-${QEMU_VERSION}
 "
 launcherbase_x86_64="
-  intel-mvp-ovmf-${EDK2_VERSION}
+  intel-mvp-tdx-tdvf-${EDK2_VERSION}
   intel-mvp-tdx-qemu-kvm-hw-usbredir-${QEMU_VERSION}
   seabios-${SEABIOS_VERSION}
 "
@@ -99,14 +97,13 @@ launcherbase_aarch64="
 launcherbase_extra="
   ethtool
   findutils
-  iptables-nft
+  iptables
   nftables
   nmap-ncat
   procps-ng
   selinux-policy
   selinux-policy-targeted
   tar
-  virtiofsd-${VIRTIOFSD_VERSION}
   xorriso
 "
 
@@ -116,7 +113,7 @@ handlerbase_main="
 handlerbase_extra="
   findutils
   iproute
-  iptables-nft
+  iptables
   nftables
   procps-ng
   selinux-policy
@@ -128,19 +125,14 @@ handlerbase_extra="
 
 libguestfstools_main="
   file
-  libguestfs-${LIBGUESTFS_VERSION}
-  guestfs-tools-${GUESTFSTOOLS_VERSION}
+  libguestfs-tools-${LIBGUESTFS_VERSION}
   intel-mvp-tdx-libvirt-daemon-driver-qemu-${LIBVIRT_VERSION}
   intel-mvp-tdx-qemu-kvm-core-${QEMU_VERSION}
   seabios-${SEABIOS_VERSION}
   tar
 "
 libguestfstools_x86_64="
-  intel-mvp-ovmf-${EDK2_VERSION}
-"
-libguestfstools_extra="
-  selinux-policy
-  selinux-policy-targeted
+  intel-mvp-tdx-tdvf-${EDK2_VERSION}
 "
 
 exportserverbase_main="
