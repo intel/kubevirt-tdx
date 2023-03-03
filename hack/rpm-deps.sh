@@ -84,10 +84,10 @@ launcherbase_main="
   intel-mvp-tdx-libvirt-client-${LIBVIRT_VERSION}
   intel-mvp-tdx-libvirt-daemon-driver-qemu-${LIBVIRT_VERSION}
   passt-${PASST_VERSION}
-  intel-mvp-tdx-qemu-kvm-core-${QEMU_VERSION}
+  intel-mvp-tdx-qemu-kvm-${QEMU_VERSION}
 "
 launcherbase_x86_64="
-  intel-mvp-tdx-tdvf-${EDK2_VERSION}
+  intel-mvp-ovmf-${EDK2_VERSION}
   intel-mvp-tdx-qemu-kvm-hw-usbredir-${QEMU_VERSION}
   seabios-${SEABIOS_VERSION}
 "
@@ -127,12 +127,12 @@ libguestfstools_main="
   file
   libguestfs-tools-${LIBGUESTFS_VERSION}
   intel-mvp-tdx-libvirt-daemon-driver-qemu-${LIBVIRT_VERSION}
-  intel-mvp-tdx-qemu-kvm-core-${QEMU_VERSION}
+  intel-mvp-tdx-qemu-kvm-${QEMU_VERSION}
   seabios-${SEABIOS_VERSION}
   tar
 "
 libguestfstools_x86_64="
-  intel-mvp-tdx-tdvf-${EDK2_VERSION}
+  intel-mvp-ovmf-${EDK2_VERSION}
 "
 
 exportserverbase_main="

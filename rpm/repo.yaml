@@ -13,4 +13,5 @@ repositories:
   gpgkey: https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Official
 - arch: x86_64
   baseurl: https://mirrors.ustc.edu.cn/epel/8/Everything/x86_64/
+  gpgcheck: 0
   name: epel
