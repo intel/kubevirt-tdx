@@ -25,6 +25,7 @@ import (
 )
 
 const (
+	EFI               = "OVMF.fd"
 	EFICode           = "OVMF_CODE.fd"
 	EFIVars           = "OVMF_VARS.fd"
 	EFICodeAARCH64    = "AAVMF_CODE.fd"
@@ -36,6 +37,7 @@ const (
 )
 
 type EFIEnvironment struct {
+	efi            string
 	code           string
 	vars           string
 	codeSecureBoot string
@@ -52,6 +54,10 @@ func (e *EFIEnvironment) Bootable(secureBoot, sev bool) bool {
 	} else {
 		return e.vars != "" && e.code != ""
 	}
+}
+
+func (e *EFIEnvironment) EFI() string {
+	return e.efi
 }
 
 func (e *EFIEnvironment) EFICode(secureBoot, sev bool) string {
@@ -90,6 +96,7 @@ func DetectEFIEnvironment(arch, ovmfPath string) *EFIEnvironment {
 	varsWithSB := getEFIBinaryIfExists(ovmfPath, EFIVarsSecureBoot)
 
 	// detect EFI without SecureBoot
+	efi := getEFIBinaryIfExists(ovmfPath, EFI)
 	code := getEFIBinaryIfExists(ovmfPath, EFICode)
 	vars := getEFIBinaryIfExists(ovmfPath, EFIVars)
 	if code == "" {
@@ -103,6 +110,7 @@ func DetectEFIEnvironment(arch, ovmfPath string) *EFIEnvironment {
 	varsWithSEV := getEFIBinaryIfExists(ovmfPath, EFIVarsSEV)
 
 	return &EFIEnvironment{
+		efi:            efi,
 		codeSecureBoot: codeWithSB,
 		varsSecureBoot: varsWithSB,
 		code:           code,
