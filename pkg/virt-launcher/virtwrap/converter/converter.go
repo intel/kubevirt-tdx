@@ -72,7 +72,7 @@ const (
 	defaultIOThread  = uint(1)
 	resolvConf       = "/etc/resolv.conf"
 	SEVPolicyNoDebug = "0x1"
-	TDXPolicyNoDebug = "0x1"
+	TDXPolicyNoDebug = "0x10000001"
 )
 
 const (
