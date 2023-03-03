@@ -16538,12 +16538,6 @@ func schema_kubevirtio_api_core_v1_Features(ref common.ReferenceCallback) common
 							Ref:         ref("kubevirt.io/api/core/v1.FeatureIOAPIC"),
 						},
 					},
-					"pic": {
-						SchemaProps: spec.SchemaProps{
-							Description: "PIC enables/disables legacy Programmable Interrupt Controller support.",
-							Ref:         ref("kubevirt.io/api/core/v1.FeatureState"),
-						},
-					},
 				},
 			},
 		},

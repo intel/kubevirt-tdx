@@ -539,7 +539,6 @@ func (Features) SwaggerDoc() map[string]string {
 		"kvm":        "Configure how KVM presence is exposed to the guest.\n+optional",
 		"pvspinlock": "Notify the guest that the host supports paravirtual spinlocks.\nFor older kernels this feature should be explicitly disabled.\n+optional",
 		"ioapic":     "Tune the guest I/O APIC mode.\nDefaults to kvm for the KVM domain.\n+optional",
-		"pic":        "PIC enables/disables legacy Programmable Interrupt Controller support.\n+optional",
 	}
 }
 

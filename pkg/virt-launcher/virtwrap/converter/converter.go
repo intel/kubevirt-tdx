@@ -1079,15 +1079,8 @@ func Convert_v1_Features_To_api_Features(source *v1.Features, features *api.Feat
 			State: boolToOnOff(source.Pvspinlock.Enabled, true),
 		}
 	}
-	if source.IOAPIC != nil {
-		features.IOAPIC = &api.FeatureIOAPIC{
-			Driver: source.IOAPIC.Driver,
-		}
-	}
-	if source.PIC != nil {
-		features.PIC = &api.FeaturePIC{
-			State: boolToOnOff(source.PIC.Enabled, true),
-		}
+	if c.UseLaunchSecurityTDX {
+		features.IOAPIC = &api.FeatureIOAPIC{Driver: "qemu"}
 	}
 	return nil
 }

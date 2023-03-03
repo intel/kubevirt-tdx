@@ -1004,9 +1004,6 @@ type Features struct {
 	// Defaults to kvm for the KVM domain.
 	// +optional
 	IOAPIC *FeatureIOAPIC `json:"ioapic,omitempty"`
-	// PIC enables/disables legacy Programmable Interrupt Controller support.
-	// +optional
-	PIC *FeatureState `json:"pic,omitempty"`
 }
 
 type SyNICTimer struct {
