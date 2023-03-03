@@ -5554,14 +5554,6 @@ var CRDsValidation map[string]string = map[string]string{
                                   type: boolean
                               type: object
                           type: object
-                        ioapic:
-                          description: Tune the guest I/O APIC mode. Defaults to kvm
-                            for the KVM domain.
-                          properties:
-                            driver:
-                              description: Set the guest I/O APIO mode.
-                              type: string
-                          type: object
                         kvm:
                           description: Configure how KVM presence is exposed to the
                             guest.
@@ -9706,14 +9698,6 @@ var CRDsValidation map[string]string = map[string]string{
                           type: boolean
                       type: object
                   type: object
-                ioapic:
-                  description: Tune the guest I/O APIC mode. Defaults to kvm for the
-                    KVM domain.
-                  properties:
-                    driver:
-                      description: Set the guest I/O APIO mode.
-                      type: string
-                  type: object
                 kvm:
                   description: Configure how KVM presence is exposed to the guest.
                   properties:
@@ -12062,14 +12046,6 @@ var CRDsValidation map[string]string = map[string]string{
                           type: boolean
                       type: object
                   type: object
-                ioapic:
-                  description: Tune the guest I/O APIC mode. Defaults to kvm for the
-                    KVM domain.
-                  properties:
-                    driver:
-                      description: Set the guest I/O APIO mode.
-                      type: string
-                  type: object
                 kvm:
                   description: Configure how KVM presence is exposed to the guest.
                   properties:
@@ -14192,14 +14168,6 @@ var CRDsValidation map[string]string = map[string]string{
                                     to true.
                                   type: boolean
                               type: object
-                          type: object
-                        ioapic:
-                          description: Tune the guest I/O APIC mode. Defaults to kvm
-                            for the KVM domain.
-                          properties:
-                            driver:
-                              description: Set the guest I/O APIO mode.
-                              type: string
                           type: object
                         kvm:
                           description: Configure how KVM presence is exposed to the
@@ -18184,14 +18152,6 @@ var CRDsValidation map[string]string = map[string]string{
                                             Defaults to true.
                                           type: boolean
                                       type: object
-                                  type: object
-                                ioapic:
-                                  description: Tune the guest I/O APIC mode. Defaults
-                                    to kvm for the KVM domain.
-                                  properties:
-                                    driver:
-                                      description: Set the guest I/O APIO mode.
-                                      type: string
                                   type: object
                                 kvm:
                                   description: Configure how KVM presence is exposed
@@ -22866,14 +22826,6 @@ var CRDsValidation map[string]string = map[string]string{
                                                 on the guest. Defaults to true.
                                               type: boolean
                                           type: object
-                                      type: object
-                                    ioapic:
-                                      description: Tune the guest I/O APIC mode. Defaults
-                                        to kvm for the KVM domain.
-                                      properties:
-                                        driver:
-                                          description: Set the guest I/O APIO mode.
-                                          type: string
                                       type: object
                                     kvm:
                                       description: Configure how KVM presence is exposed
