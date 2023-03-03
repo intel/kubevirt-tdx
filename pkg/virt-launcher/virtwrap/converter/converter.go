@@ -1132,7 +1132,7 @@ func convertV1ToAPISyNICTimer(syNICTimer *v1.SyNICTimer) *api.SyNICTimer {
 }
 
 func ConvertV1ToAPIBalloning(source *v1.Devices, ballooning *api.MemBalloon, c *ConverterContext) {
-	if source != nil && source.AutoattachMemBalloon != nil && *source.AutoattachMemBalloon == false {
+	if (source != nil && source.AutoattachMemBalloon != nil && *source.AutoattachMemBalloon == false) || c.UseLaunchSecurityTDX {
 		ballooning.Model = "none"
 		ballooning.Stats = nil
 	} else {
