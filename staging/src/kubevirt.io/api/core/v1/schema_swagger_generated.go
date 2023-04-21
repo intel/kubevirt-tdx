@@ -368,7 +368,9 @@ func (SEV) SwaggerDoc() map[string]string {
 }
 
 func (TDX) SwaggerDoc() map[string]string {
-	return map[string]string{}
+	return map[string]string{
+		"QGS": "TDVMCALL for Quote Generation Service connection",
+	}
 }
 
 func (LunTarget) SwaggerDoc() map[string]string {

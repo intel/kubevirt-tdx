@@ -922,6 +922,7 @@ type LaunchSecurity struct {
 	Cbitpos         string `xml:"cbitpos,omitempty"`
 	ReducedPhysBits string `xml:"reducedPhysBits,omitempty"`
 	Policy          string `xml:"policy,omitempty"`
+	QGS             string `xml:"Quote-Generation-Service,omitempty"`
 }
 
 //END LaunchSecurity --------------------

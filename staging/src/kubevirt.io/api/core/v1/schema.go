@@ -658,6 +658,8 @@ type SEV struct {
 }
 
 type TDX struct {
+	// TDVMCALL for Quote Generation Service connection
+	QGS string `json:"QGS,omitempty"`
 }
 
 type LunTarget struct {

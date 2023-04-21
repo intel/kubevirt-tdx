@@ -17913,7 +17913,13 @@
     }
    },
    "v1.TDX": {
-    "type": "object"
+    "type": "object",
+    "properties": {
+     "QGS": {
+      "description": "TDVMCALL for Quote Generation Service connection",
+      "type": "string"
+     }
+    }
    },
    "v1.TLSConfiguration": {
     "description": "TLSConfiguration holds TLS options",

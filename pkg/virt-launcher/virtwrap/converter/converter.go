@@ -1336,6 +1336,10 @@ func Convert_v1_VirtualMachineInstance_To_api_Domain(vmi *v1.VirtualMachineInsta
 			Type:   "tdx",
 			Policy: TDXPolicyNoDebug, // Always set TDX NoDebug policy
 		}
+		// Set TDVMCALL parameter
+		if vmi.Spec.Domain.LaunchSecurity.TDX.QGS != "" {
+			domain.Spec.LaunchSecurity.QGS = vmi.Spec.Domain.LaunchSecurity.TDX.QGS
+		}
 	}
 	if c.SMBios != nil {
 		domain.Spec.SysInfo.System = append(domain.Spec.SysInfo.System,

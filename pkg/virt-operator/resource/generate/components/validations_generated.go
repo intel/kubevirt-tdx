@@ -5668,6 +5668,10 @@ var CRDsValidation map[string]string = map[string]string{
                           type: object
                         tdx:
                           description: Intel Trust Domain Extensions (TDX).
+                          properties:
+                            QGS:
+                              description: TDVMCALL for Quote Generation Service connection
+                              type: string
                           type: object
                       type: object
                     machine:
@@ -7255,6 +7259,10 @@ var CRDsValidation map[string]string = map[string]string{
               type: object
             tdx:
               description: Intel Trust Domain Extensions (TDX).
+              properties:
+                QGS:
+                  description: TDVMCALL for Quote Generation Service connection
+                  type: string
               type: object
           type: object
         memory:
@@ -9805,6 +9813,10 @@ var CRDsValidation map[string]string = map[string]string{
                   type: object
                 tdx:
                   description: Intel Trust Domain Extensions (TDX).
+                  properties:
+                    QGS:
+                      description: TDVMCALL for Quote Generation Service connection
+                      type: string
                   type: object
               type: object
             machine:
@@ -12153,6 +12165,10 @@ var CRDsValidation map[string]string = map[string]string{
                   type: object
                 tdx:
                   description: Intel Trust Domain Extensions (TDX).
+                  properties:
+                    QGS:
+                      description: TDVMCALL for Quote Generation Service connection
+                      type: string
                   type: object
               type: object
             machine:
@@ -14283,6 +14299,10 @@ var CRDsValidation map[string]string = map[string]string{
                           type: object
                         tdx:
                           description: Intel Trust Domain Extensions (TDX).
+                          properties:
+                            QGS:
+                              description: TDVMCALL for Quote Generation Service connection
+                              type: string
                           type: object
                       type: object
                     machine:
@@ -15435,6 +15455,10 @@ var CRDsValidation map[string]string = map[string]string{
               type: object
             tdx:
               description: Intel Trust Domain Extensions (TDX).
+              properties:
+                QGS:
+                  description: TDVMCALL for Quote Generation Service connection
+                  type: string
               type: object
           type: object
         memory:
@@ -18274,6 +18298,11 @@ var CRDsValidation map[string]string = map[string]string{
                                   type: object
                                 tdx:
                                   description: Intel Trust Domain Extensions (TDX).
+                                  properties:
+                                    QGS:
+                                      description: TDVMCALL for Quote Generation Service
+                                        connection
+                                      type: string
                                   type: object
                               type: object
                             machine:
@@ -22952,6 +22981,11 @@ var CRDsValidation map[string]string = map[string]string{
                                       type: object
                                     tdx:
                                       description: Intel Trust Domain Extensions (TDX).
+                                      properties:
+                                        QGS:
+                                          description: TDVMCALL for Quote Generation
+                                            Service connection
+                                          type: string
                                       type: object
                                   type: object
                                 machine:
