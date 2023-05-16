@@ -20,6 +20,7 @@
 package cgroup
 
 import (
+	"bufio"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -155,4 +156,60 @@ func detectVMIsolation(vm *v1.VirtualMachineInstance, socket string) (isolationR
 	}
 
 	return isolationRes, nil
+}
+
+// GetTDXKeys gets the total tdx key number and remaining tdx key number
+func GetTDXKeys() ([]int, error) {
+	miscPath := filepath.Join(cgroupBasePath, "misc.capacity")
+	miscCurrentPath := filepath.Join(cgroupBasePath, "misc.current")
+	if !runc_cgroups.IsCgroup2UnifiedMode() {
+		miscPath = filepath.Join(cgroupBasePath, "misc", "misc.capacity")
+		miscCurrentPath = filepath.Join(cgroupBasePath, "misc", "misc.current")
+	}
+
+	res := make([]int, 0)
+	// get tdx key capacity
+	miscFile, err := os.Open(miscPath)
+	if err != nil {
+		return nil, err
+	}
+	defer miscFile.Close()
+
+	miscScanner := bufio.NewScanner(miscFile)
+	for miscScanner.Scan() {
+		tmp := miscScanner.Text()
+		if strings.Contains(tmp, "tdx") {
+			tdxKeyCap, err := strconv.Atoi(strings.TrimSpace(strings.Split(string(tmp), " ")[1]))
+			if err != nil {
+				return nil, err
+			}
+			res = append(res, tdxKeyCap)
+			break
+		}
+	}
+
+	// get tdx current used key number
+	miscCurFile, err := os.Open(miscCurrentPath)
+	if err != nil {
+		return nil, err
+	}
+	defer miscCurFile.Close()
+	miscCurScanner := bufio.NewScanner(miscCurFile)
+	for miscCurScanner.Scan() {
+		tmp := miscCurScanner.Text()
+		if strings.Contains(tmp, "tdx") {
+			tdxKeyLeft, err := strconv.Atoi(strings.TrimSpace(strings.Split(string(tmp), " ")[1]))
+			if err != nil {
+				return nil, err
+			}
+			res = append(res, tdxKeyLeft)
+			break
+		}
+	}
+
+	if len(res) != 2 {
+		return nil, fmt.Errorf("cannot read tdx key number from cgroup")
+	}
+
+	return res, nil
 }

@@ -40,6 +40,7 @@ import (
 
 	utiltype "kubevirt.io/kubevirt/pkg/util/types"
 	virtconfig "kubevirt.io/kubevirt/pkg/virt-config"
+	"kubevirt.io/kubevirt/pkg/virt-handler/cgroup"
 	"kubevirt.io/kubevirt/pkg/virt-handler/node-labeller/api"
 	"kubevirt.io/kubevirt/pkg/virt-handler/node-labeller/util"
 )
@@ -121,6 +122,11 @@ func (n *NodeLabeller) Run(threadiness int, stop chan struct{}) {
 	for i := 0; i < threadiness; i++ {
 		go wait.Until(n.runWorker, time.Second, stop)
 	}
+
+	if n.TDX.Supported == "yes" {
+		go wait.Until(n.updateTDXKeysOnNode, 30*time.Second, stop)
+	}
+
 	<-stop
 }
 
@@ -336,6 +342,50 @@ func (n *NodeLabeller) removeLabellerLabels(node *v1.Node) {
 			delete(node.Annotations, annotation)
 		}
 	}
+}
+
+// updateTDXKeysOnNode updates remaining tdx key number on node
+func (n *NodeLabeller) updateTDXKeysOnNode() {
+	node, err := n.clientset.CoreV1().Nodes().Get(context.Background(), n.host, metav1.GetOptions{})
+	if err != nil {
+		n.logger.Errorf("Get node info error: %v", err)
+		return
+	}
+	TDXKeyNumber, err := cgroup.GetTDXKeys()
+	if err != nil {
+		n.logger.Errorf("Get remaining tdx keys from cgroup error: %v", err)
+		return
+	}
+	podList, err := n.clientset.CoreV1().Pods("").List(context.Background(), metav1.ListOptions{FieldSelector: "spec.nodeName=" + node.Name})
+	if err != nil {
+		n.logger.Errorf("List Pods error: %v", err)
+		return
+	}
+
+	TDXKeyVal := util.CalculateCurrentTDXKeyCap(podList, TDXKeyNumber)
+	payload := make([]utiltype.PatchOperation, 0)
+	_, ok := node.Status.Capacity["intel.kubevirt.io/tdx"]
+	patchOp := "replace"
+	if !ok {
+		patchOp = "add"
+	}
+	payload = append(payload, utiltype.PatchOperation{
+		Op:    patchOp,
+		Path:  "/status/capacity/intel.kubevirt.io~1tdx",
+		Value: TDXKeyVal,
+	},
+	)
+
+	payloadBytes, err := json.Marshal(payload)
+	if err != nil {
+		n.logger.Errorf("tdx key json marshal error: %v", err)
+		return
+	}
+	_, err = n.clientset.CoreV1().Nodes().Patch(context.Background(), node.Name, types.JSONPatchType, payloadBytes, metav1.PatchOptions{}, "status")
+	if err != nil {
+		n.logger.Errorf("patch remaining tdx keys error: %v", err)
+	}
+
 }
 
 const kernelSchedRealtimeRuntimeInMicrosecods = "kernel.sched_rt_runtime_us"

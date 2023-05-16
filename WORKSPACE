@@ -449,12 +449,6 @@ go_repository(
 bazeldnf_dependencies()
 
 rpm(
-    name = "aajohan-comfortaa-fonts-0__3.001-2.el8.x86_64",
-    sha256 = "9c760ee8bc6bcde40a8c51cc4c9255b0b950420f9cdb7c15883377bc3558bf21",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/aajohan-comfortaa-fonts-3.001-2.el8.noarch.rpm"],
-)
-
-rpm(
     name = "acl-0__2.2.53-1.el8.aarch64",
     sha256 = "47c2cc5872174c548de1096dc5673ee91349209d89e0193a4793955d6865b3b1",
     urls = [
@@ -767,6 +761,18 @@ rpm(
         "http://mirror.centos.org/centos/8-stream/BaseOS/x86_64/os/Packages/chkconfig-1.19.1-1.el8.x86_64.rpm",
         "https://storage.googleapis.com/builddeps/561b5fdadd60370b5d0a91b7ed35df95d7f60650cbade8c7e744323982ac82db",
     ],
+)
+
+rpm(
+    name = "comic-neue-angular-fonts-0__2.3-3.el8.x86_64",
+    sha256 = "5829395005c2b012169159e0e1082e1ddab4c4415ae43a2a7e7cf9965091ad9f",
+    urls = ["https://mirrors.ustc.edu.cn/epel/8/Everything/x86_64/Packages/c/comic-neue-angular-fonts-2.3-3.el8.noarch.rpm"],
+)
+
+rpm(
+    name = "comic-neue-fonts-common-0__2.3-3.el8.x86_64",
+    sha256 = "3d67f5101bbb278958e1133d9a728aed302f6dc6386af56071cfae1fa7d95620",
+    urls = ["https://mirrors.ustc.edu.cn/epel/8/Everything/x86_64/Packages/c/comic-neue-fonts-common-2.3-3.el8.noarch.rpm"],
 )
 
 rpm(
@@ -1175,9 +1181,9 @@ rpm(
 )
 
 rpm(
-    name = "elfutils-default-yama-scope-0__0.189-1.el8.x86_64",
-    sha256 = "d3d2ada93b11a057ea1a246e5a3ed48375529c7b0c6307a29e316201b62ac809",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/elfutils-default-yama-scope-0.189-1.el8.noarch.rpm"],
+    name = "elfutils-default-yama-scope-0__0.189-2.el8.x86_64",
+    sha256 = "8a9ce60ea520da65631de954a319be6b5b84b2391b848ba3d65a33af6bb4dd13",
+    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/elfutils-default-yama-scope-0.189-2.el8.noarch.rpm"],
 )
 
 rpm(
@@ -1190,9 +1196,9 @@ rpm(
 )
 
 rpm(
-    name = "elfutils-libelf-0__0.189-1.el8.x86_64",
-    sha256 = "1a87f09a9c3f85e2d595a81cb5e4888dd0ee70ecc7095f598d65b03a5677a904",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/elfutils-libelf-0.189-1.el8.x86_64.rpm"],
+    name = "elfutils-libelf-0__0.189-2.el8.x86_64",
+    sha256 = "5c795eba64e1059834fc07177e92287ae92b05b6228ec5fe43c663f56da89934",
+    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/elfutils-libelf-0.189-2.el8.x86_64.rpm"],
 )
 
 rpm(
@@ -1205,9 +1211,9 @@ rpm(
 )
 
 rpm(
-    name = "elfutils-libs-0__0.189-1.el8.x86_64",
-    sha256 = "60c5cac5956ad00d616a95c1ef68d640c75720f415cef3a8993712a45d800b2d",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/elfutils-libs-0.189-1.el8.x86_64.rpm"],
+    name = "elfutils-libs-0__0.189-2.el8.x86_64",
+    sha256 = "79bedf7bea9977cb01d4a0f71b403539c63d40de0354605c35a8db94771e3e7c",
+    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/elfutils-libs-0.189-2.el8.x86_64.rpm"],
 )
 
 rpm(
@@ -1631,6 +1637,18 @@ rpm(
 )
 
 rpm(
+    name = "google-noto-fonts-common-0__20161022-7.el8.1.x86_64",
+    sha256 = "d90f65b0b7c294e6114387dfcc06e60fe2c8a473f6df691bc468fc909ae2b2de",
+    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/AppStream/x86_64/os/Packages/google-noto-fonts-common-20161022-7.el8.1.noarch.rpm"],
+)
+
+rpm(
+    name = "google-noto-sans-fonts-0__20161022-7.el8.1.x86_64",
+    sha256 = "2e9a537bd13169634052feb9411c2f4c315c57d791a260b615c42b1b6e44f002",
+    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/AppStream/x86_64/os/Packages/google-noto-sans-fonts-20161022-7.el8.1.noarch.rpm"],
+)
+
+rpm(
     name = "graphite2-0__1.3.10-10.el8.x86_64",
     sha256 = "0f9c3ee5f54ed296f99219bd70fa4f869c4c9986e3766d813a76a0cc5ecee24e",
     urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/AppStream/x86_64/os/Packages/graphite2-1.3.10-10.el8.x86_64.rpm"],
@@ -1754,111 +1772,111 @@ rpm(
 )
 
 rpm(
-    name = "intel-mvp-tdx-libvirt-client-0__8.6.0-2022.11.17.mvp3.el8.x86_64",
-    sha256 = "ea7f3bc47cd6125f58b14b1606d01912a25bebc35fe343e5cd5261bcd800bfa2",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-libvirt-client-8.6.0-2022.11.17.mvp3.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-libvirt-client-0__8.6.0-2022.11.17.mvp2.el8.x86_64",
+    sha256 = "98655248e34117a5ab5c27cc2c05b2e8c12205636e1ab5fa2bf60506e40adc12",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-libvirt-client-8.6.0-2022.11.17.mvp2.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-libvirt-daemon-0__8.6.0-2022.11.17.mvp3.el8.x86_64",
-    sha256 = "d8b03f2c2217097bce837d924e06e03ab772e0a4fc3ceaf15fcd676f79c2aa13",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-libvirt-daemon-8.6.0-2022.11.17.mvp3.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-libvirt-daemon-0__8.6.0-2022.11.17.mvp2.el8.x86_64",
+    sha256 = "079d1e2c21f79ac75f896c9ad6ea74b761b71bff843153a0f0fa4ff77b3f7b57",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-libvirt-daemon-8.6.0-2022.11.17.mvp2.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-libvirt-daemon-driver-qemu-0__8.6.0-2022.11.17.mvp3.el8.x86_64",
-    sha256 = "e4c7aebe5a755ad0cd20ebec85c3a5fe062a43cd323e3f7b15636d80d6a16cfe",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-libvirt-daemon-driver-qemu-8.6.0-2022.11.17.mvp3.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-libvirt-daemon-driver-qemu-0__8.6.0-2022.11.17.mvp2.el8.x86_64",
+    sha256 = "45c179b99b85a0faa437bafc2fe645530a71176e1afff2276f41583a8f78884e",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-libvirt-daemon-driver-qemu-8.6.0-2022.11.17.mvp2.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-libvirt-devel-0__8.6.0-2022.11.17.mvp3.el8.x86_64",
-    sha256 = "a7e7292c20253a13def76782966cd6b7e1dd1ec9172b271e3831b77aab760439",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-libvirt-devel-8.6.0-2022.11.17.mvp3.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-libvirt-devel-0__8.6.0-2022.11.17.mvp2.el8.x86_64",
+    sha256 = "52f4619c6b76630ea01a78a8dd6c472ce6e1dd7a0915952471513ea1b8df9627",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-libvirt-devel-8.6.0-2022.11.17.mvp2.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-libvirt-libs-0__8.6.0-2022.11.17.mvp3.el8.x86_64",
-    sha256 = "be0b9e8feb7a8cb4a84e494a8de4c105840047a5327a057b1d54e9e140e939a1",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-libvirt-libs-8.6.0-2022.11.17.mvp3.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-libvirt-libs-0__8.6.0-2022.11.17.mvp2.el8.x86_64",
+    sha256 = "957cd305ecbc3a58fa306a79fa0144d34157597fea696bd0dc84ce8f861bdd58",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-libvirt-libs-8.6.0-2022.11.17.mvp2.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-img-17__7.2.0-v1.10.mvp12.el8.x86_64",
-    sha256 = "98a759260098a5739cb0f73b64be274aba96ec15c2aeeb84e31ac22886f4661f",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-img-7.2.0-v1.10.mvp12.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-img-17__7.0.50-v1.4.mvp7.el8.x86_64",
+    sha256 = "937181e8e5db8fc5103f22fde7445320a75cc72a01c33b79c05ee63d0135f49b",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-img-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-17__7.2.0-v1.10.mvp12.el8.x86_64",
-    sha256 = "77007ad6c5fcd71c76f245d5b728d7bae13022a4e807290979bfcb0d564a0dd2",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-7.2.0-v1.10.mvp12.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-17__7.0.50-v1.4.mvp7.el8.x86_64",
+    sha256 = "1a1b84c60eef56f5d76c238eb28e6d065fdeb3cda5f61607edc879b82bcf97bc",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-audio-pa-17__7.2.0-v1.10.mvp12.el8.x86_64",
-    sha256 = "3aa32a0f3d1ef12e7a985dff853e1fe2108bbdfc55b7e10368ea8951db3fa434",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-audio-pa-7.2.0-v1.10.mvp12.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-audio-pa-17__7.0.50-v1.4.mvp7.el8.x86_64",
+    sha256 = "8f2111233f4ab49a3e187774e72d583e1db4ea5bc3e984ca53de17820aff2fee",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-audio-pa-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-block-rbd-17__7.2.0-v1.10.mvp12.el8.x86_64",
-    sha256 = "0e5aac272fdcdc8adb4e42866ff3789edcd8558f41946bf35c31a36ae6cc0384",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-block-rbd-7.2.0-v1.10.mvp12.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-block-rbd-17__7.0.50-v1.4.mvp7.el8.x86_64",
+    sha256 = "16c33499fcd72b59cb2c45dfc83e1e44ce78dc9de2c1bf15199e789fc42579a4",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-block-rbd-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-common-17__7.2.0-v1.10.mvp12.el8.x86_64",
-    sha256 = "cccaa96557c08f0dc3cb4fb7129d1ccbef71ee1aa6856770beb9db563f7b0263",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-common-7.2.0-v1.10.mvp12.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-common-17__7.0.50-v1.4.mvp7.el8.x86_64",
+    sha256 = "3053ec69490d34cf6160e64d613441bf340ba9d9fdf1cfa1d843cf8a0fa182c0",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-common-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-core-17__7.2.0-v1.10.mvp12.el8.x86_64",
-    sha256 = "a18d64609f87030089b09aaca7a993ee5246f993390bf62a3d96284fba29c5e2",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-core-7.2.0-v1.10.mvp12.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-core-17__7.0.50-v1.4.mvp7.el8.x86_64",
+    sha256 = "160082a3e87aef699429f0167a44800080a2326ccb5cc4ffee55a408ccefb6ff",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-core-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-docs-17__7.2.0-v1.10.mvp12.el8.x86_64",
-    sha256 = "4a865595f229b9479fabba7e6a15938021dffc86fbc1e4e904cf40c831bbbefa",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-docs-7.2.0-v1.10.mvp12.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-docs-17__7.0.50-v1.4.mvp7.el8.x86_64",
+    sha256 = "59aa4a44eed7907292b14b03236de1314712f4c926468e89ac781903dfb9d45c",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-docs-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-hw-usbredir-17__7.2.0-v1.10.mvp12.el8.x86_64",
-    sha256 = "4306ff1dcd200249b0a7df16248ca91d21a20dae70d8a0e7a60569f7c9e2110b",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-hw-usbredir-7.2.0-v1.10.mvp12.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-hw-usbredir-17__7.0.50-v1.4.mvp7.el8.x86_64",
+    sha256 = "08ff2ef9490bbb96bb2c4d19a8dfd4f6a9de4862749daff2a305ab0194352716",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-hw-usbredir-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-tools-17__7.2.0-v1.10.mvp12.el8.x86_64",
-    sha256 = "719e637360c00c147aa8fbf650f4a0851f0a67dd991f1b7ca852573a859d8149",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-tools-7.2.0-v1.10.mvp12.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-tools-17__7.0.50-v1.4.mvp7.el8.x86_64",
+    sha256 = "6917cb16cd38a089f068e60f560d8fd1d5ecda95b3b2fab4b2eab3a1167996d0",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-tools-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-ui-opengl-17__7.2.0-v1.10.mvp12.el8.x86_64",
-    sha256 = "6f54cc54758177a3c2e98bb4fb71cd7e6cd4246e5511b642e2e90baebe6da974",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-ui-opengl-7.2.0-v1.10.mvp12.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-ui-opengl-17__7.0.50-v1.4.mvp7.el8.x86_64",
+    sha256 = "79ffee617a1bec53d932932cddde050f11285434e175192f18d70a627a757342",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-ui-opengl-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-ui-spice-17__7.2.0-v1.10.mvp12.el8.x86_64",
-    sha256 = "668589e844df533a1f87d0131ecbd1545103c5e5ed6fb4bb3d9fe8f3f8ef26b5",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-ui-spice-7.2.0-v1.10.mvp12.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-ui-spice-17__7.0.50-v1.4.mvp7.el8.x86_64",
+    sha256 = "23b393872e9eaf45cda46d4d16a05d3714ab7bdbddec4f4547ebcfb05157b75f",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-ui-spice-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-pr-helper-17__7.2.0-v1.10.mvp12.el8.x86_64",
-    sha256 = "1cbcc7e772ebc55c059ec1dbc0f70af5b69ab0bd2037461d529b4fe441bfb189",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-pr-helper-7.2.0-v1.10.mvp12.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-pr-helper-17__7.0.50-v1.4.mvp7.el8.x86_64",
+    sha256 = "8948e8b7cc790deed5fc5895937c818d0c36c38c175df8144e969c90645ca20d",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-pr-helper-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-virtiofsd-17__7.2.0-v1.10.mvp12.el8.x86_64",
-    sha256 = "1c15a5ebdf6fe19b8d10c5f50130882b08fe435f60f48bc28560602310924c40",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-virtiofsd-7.2.0-v1.10.mvp12.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-virtiofsd-17__7.0.50-v1.4.mvp7.el8.x86_64",
+    sha256 = "9979e90e6a0276114f1b7c3243457fe636580899aad1d3dd41ef567930fb0dd4",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-virtiofsd-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
 )
 
 rpm(
@@ -2033,9 +2051,9 @@ rpm(
 )
 
 rpm(
-    name = "kernel-headers-0__4.18.0-483.el8.x86_64",
-    sha256 = "55f4534507c7eac45777547c7a052dc7fe22355e773131d26652ed504c2a059f",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/kernel-headers-4.18.0-483.el8.x86_64.rpm"],
+    name = "kernel-headers-0__4.18.0-490.el8.x86_64",
+    sha256 = "60c51ccbd42cac84c0c1f2024dee4f8f6fe978dc9c196e0ac68b97965371df95",
+    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/kernel-headers-4.18.0-490.el8.x86_64.rpm"],
 )
 
 rpm(
@@ -2333,6 +2351,12 @@ rpm(
         "http://mirror.centos.org/centos/8-stream/BaseOS/x86_64/os/Packages/libbpf-0.5.0-1.el8.x86_64.rpm",
         "https://storage.googleapis.com/builddeps/4d25308c27041d8a88a3340be12591e9bd46c9aebbe4195ee5d2f712d63ce033",
     ],
+)
+
+rpm(
+    name = "libbsd-0__0.11.7-2.el8.x86_64",
+    sha256 = "770fea26e535d22663d8d5fe54ff65a0fa450800f3ca7bf73a201420956472fd",
+    urls = ["https://mirrors.ustc.edu.cn/epel/8/Everything/x86_64/Packages/l/libbsd-0.11.7-2.el8.x86_64.rpm"],
 )
 
 rpm(
@@ -2777,6 +2801,12 @@ rpm(
 )
 
 rpm(
+    name = "libmd-0__1.0.4-2.el8.x86_64",
+    sha256 = "2015cb2804f6496ade19b21e6636ceaf963a95aecf64a4e8022afbd87d3edc0c",
+    urls = ["https://mirrors.ustc.edu.cn/epel/8/Everything/x86_64/Packages/l/libmd-1.0.4-2.el8.x86_64.rpm"],
+)
+
+rpm(
     name = "libmnl-0__1.0.4-6.el8.aarch64",
     sha256 = "fbe4f2cb2660ebe3cb90a73c7dfbd978059af138356e46c9a93049761c0467ef",
     urls = [
@@ -3044,6 +3074,12 @@ rpm(
     name = "librdmacm-0__44.0-2.el8.1.x86_64",
     sha256 = "3bca954f9193a62d75fe215f8c157a25aa9321e84f7f38b31d26f7fd29196ca9",
     urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/librdmacm-44.0-2.el8.1.x86_64.rpm"],
+)
+
+rpm(
+    name = "libretls-0__3.7.0-1.el8.x86_64",
+    sha256 = "de1785ace1bc0b3cc697a44a7f4a9fc2f1788950f70aea757c21f4d85e97619c",
+    urls = ["https://mirrors.ustc.edu.cn/epel/8/Everything/x86_64/Packages/l/libretls-3.7.0-1.el8.x86_64.rpm"],
 )
 
 rpm(
@@ -3818,6 +3854,12 @@ rpm(
 )
 
 rpm(
+    name = "netcat-0__1.219-2.el8.x86_64",
+    sha256 = "4a85c81a4e298ef9a933a9a5d8bcdeba62dd94f59f011790132b978667d0115e",
+    urls = ["https://mirrors.ustc.edu.cn/epel/8/Everything/x86_64/Packages/n/netcat-1.219-2.el8.x86_64.rpm"],
+)
+
+rpm(
     name = "nettle-0__3.4.1-7.el8.aarch64",
     sha256 = "5441222132ae52cd31063e9b9e3bb40f2e5711dfb0c84315b4aec2907278a075",
     urls = [
@@ -4028,12 +4070,6 @@ rpm(
         "http://mirror.centos.org/centos/8-stream/BaseOS/x86_64/os/Packages/p11-kit-trust-0.23.22-1.el8.x86_64.rpm",
         "https://storage.googleapis.com/builddeps/d218619a4859e002fe677703bc1767986314cd196ae2ac397ed057f3bec36516",
     ],
-)
-
-rpm(
-    name = "paktype-naqsh-fonts-0__4.1-8.el8.x86_64",
-    sha256 = "e33a96ba0d7349689c284200ad192040c395e589f66bcf8d2cb5549ebdb20b2c",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/AppStream/x86_64/os/Packages/paktype-naqsh-fonts-4.1-8.el8.noarch.rpm"],
 )
 
 rpm(

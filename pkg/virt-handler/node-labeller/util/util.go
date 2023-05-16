@@ -19,6 +19,11 @@
 
 package util
 
+import (
+	corev1 "k8s.io/api/core/v1"
+	resourcehelper "k8s.io/kubectl/pkg/util/resource"
+)
+
 const (
 	DeprecatedLabelNamespace              string = "feature.node.kubernetes.io"
 	DeprecatedLabellerNamespaceAnnotation        = "node-labeller-feature.node.kubernetes.io"
@@ -47,4 +52,32 @@ var DefaultObsoleteCPUModels = map[string]bool{
 	"qemu32":     true,
 	"kvm64":      true,
 	"kvm32":      true,
+}
+
+// getTDXKeyTotalRequestsAndLimits gets current consumed intel TDX keys by kubevirt
+func getTDXKeyTotalRequestsAndLimits(podList *corev1.PodList) int {
+	usedTDXKey := 0
+	for _, pod := range podList.Items {
+		podReqs, _ := resourcehelper.PodRequestsAndLimits(&pod)
+		for podReqName := range podReqs {
+			if podReqName == "intel.kubevirt.io/tdx" {
+				usedTDXKey += 1
+			}
+		}
+	}
+	return usedTDXKey
+}
+
+// CalculateCurrentTDXKeyCap calculates current capacity of intel TDX key in kubevirt
+// Currently, there are three ways to consume keys: 1. kubevirt; 2. coco; 3. lacunch vm on bare metal
+// For managing how many keys that can be used in kubevirt, therefore, we need to
+// subtract the total keys used by the second and third methods from the total.
+func CalculateCurrentTDXKeyCap(podList *corev1.PodList, TDXKeyNumber []int) int {
+	usedTDXKey := getTDXKeyTotalRequestsAndLimits(podList)
+	// not kubevirt used key = current used - kubevirt used
+	otherTDXKey := TDXKeyNumber[1] - usedTDXKey
+	// kubevirt tdx key capacity = total - not kubevirt used key
+	curTDXKeyCap := TDXKeyNumber[0] - otherTDXKey
+
+	return curTDXKeyCap
 }

@@ -38,6 +38,7 @@ const (
 	isUnusable             string = "no"
 	isRequired             string = "require"
 	nodeLabellerVolumePath        = "/var/lib/kubevirt-node-labeller/"
+	cgroupBasePath                = "/sys/fs/cgroup"
 
 	supportedFeaturesXml = "supported_features.xml"
 )

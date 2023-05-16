@@ -5,4 +5,8 @@ go_library(
     srcs = ["util.go"],
     importpath = "kubevirt.io/kubevirt/pkg/virt-handler/node-labeller/util",
     visibility = ["//visibility:public"],
+    deps = [
+        "//vendor/k8s.io/api/core/v1:go_default_library",
+        "//vendor/k8s.io/kubectl/pkg/util/resource:go_default_library",
+    ],
 )

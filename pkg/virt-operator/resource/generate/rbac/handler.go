@@ -87,6 +87,8 @@ func newHandlerClusterRole() *rbacv1.ClusterRole {
 				},
 				Resources: []string{
 					"nodes",
+					"nodes/status",
+					"pods",
 				},
 				Verbs: []string{
 					"patch",

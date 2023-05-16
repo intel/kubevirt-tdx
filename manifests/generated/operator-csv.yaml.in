@@ -753,6 +753,8 @@ spec:
           - ""
           resources:
           - nodes
+          - nodes/status
+          - pods
           verbs:
           - patch
           - list
