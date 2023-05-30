@@ -764,18 +764,6 @@ rpm(
 )
 
 rpm(
-    name = "comic-neue-angular-fonts-0__2.3-3.el8.x86_64",
-    sha256 = "5829395005c2b012169159e0e1082e1ddab4c4415ae43a2a7e7cf9965091ad9f",
-    urls = ["https://mirrors.ustc.edu.cn/epel/8/Everything/x86_64/Packages/c/comic-neue-angular-fonts-2.3-3.el8.noarch.rpm"],
-)
-
-rpm(
-    name = "comic-neue-fonts-common-0__2.3-3.el8.x86_64",
-    sha256 = "3d67f5101bbb278958e1133d9a728aed302f6dc6386af56071cfae1fa7d95620",
-    urls = ["https://mirrors.ustc.edu.cn/epel/8/Everything/x86_64/Packages/c/comic-neue-fonts-common-2.3-3.el8.noarch.rpm"],
-)
-
-rpm(
     name = "coreutils-single-0__8.30-13.el8.aarch64",
     sha256 = "0f560179f5b79ee62e0d71efb8d67f0d8eca9b31b752064a507c1052985e1251",
     urls = [
@@ -944,6 +932,12 @@ rpm(
         "http://mirror.centos.org/centos/8-stream/BaseOS/x86_64/os/Packages/cyrus-sasl-lib-2.1.27-6.el8_5.x86_64.rpm",
         "https://storage.googleapis.com/builddeps/5bd6e1201d8b10c6f01f500c43f63204f1d2ec8a4d8ce53c741e611c81ffb404",
     ],
+)
+
+rpm(
+    name = "d-din-fonts-0__1.0-6.el8.x86_64",
+    sha256 = "047b77bbfde8274ed20bf230e025e43728e0e2902aa06cd653f93c011e45626b",
+    urls = ["https://mirrors.ustc.edu.cn/epel/8/Everything/x86_64/Packages/d/d-din-fonts-1.0-6.el8.noarch.rpm"],
 )
 
 rpm(
@@ -1484,9 +1478,9 @@ rpm(
 )
 
 rpm(
-    name = "glibc-0__2.28-225.el8.x86_64",
-    sha256 = "6d88e3fa48a899642c66613f736dcb6c5937749932c836890eb8543e4e6bd21c",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/glibc-2.28-225.el8.x86_64.rpm"],
+    name = "glibc-0__2.28-226.el8.x86_64",
+    sha256 = "12d4887b9142c5e15bcbf156b36da9ee7bb4235c37c78e849a14d2afff30e148",
+    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/glibc-2.28-226.el8.x86_64.rpm"],
 )
 
 rpm(
@@ -1499,9 +1493,9 @@ rpm(
 )
 
 rpm(
-    name = "glibc-common-0__2.28-225.el8.x86_64",
-    sha256 = "8a923d9ff71edaa2ee23f848672cc652af2f514dc58365603247828d6b1bbbe1",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/glibc-common-2.28-225.el8.x86_64.rpm"],
+    name = "glibc-common-0__2.28-226.el8.x86_64",
+    sha256 = "a79ec6b048fdc53229a21e111aa494a8e95bde53357402f271aa2f38fbf87427",
+    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/glibc-common-2.28-226.el8.x86_64.rpm"],
 )
 
 rpm(
@@ -1514,9 +1508,9 @@ rpm(
 )
 
 rpm(
-    name = "glibc-devel-0__2.28-225.el8.x86_64",
-    sha256 = "e7fb46412b52757e5763403e5b32036fe8ba1df4719572fc7d1340151de8d217",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/glibc-devel-2.28-225.el8.x86_64.rpm"],
+    name = "glibc-devel-0__2.28-226.el8.x86_64",
+    sha256 = "33286541eee35d838aaf08d0b80e4d566c9ad26d416108ef0626274a8405c609",
+    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/glibc-devel-2.28-226.el8.x86_64.rpm"],
 )
 
 rpm(
@@ -1529,9 +1523,9 @@ rpm(
 )
 
 rpm(
-    name = "glibc-headers-0__2.28-225.el8.x86_64",
-    sha256 = "4642d454391c53e51b15b340f35022fded6544a0ab81b78395be6a199ba0aa76",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/glibc-headers-2.28-225.el8.x86_64.rpm"],
+    name = "glibc-headers-0__2.28-226.el8.x86_64",
+    sha256 = "8dd54d801e9cef361610f53da70ccd3497f34a120a37ae1f5ab4e801b52addaf",
+    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/glibc-headers-2.28-226.el8.x86_64.rpm"],
 )
 
 rpm(
@@ -1544,9 +1538,9 @@ rpm(
 )
 
 rpm(
-    name = "glibc-minimal-langpack-0__2.28-225.el8.x86_64",
-    sha256 = "24020560f7e9ac52e76da50c8240fa0de00f83ed4d714eafd4a171615925ff2d",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/glibc-minimal-langpack-2.28-225.el8.x86_64.rpm"],
+    name = "glibc-minimal-langpack-0__2.28-226.el8.x86_64",
+    sha256 = "015b7d6f98e7789a93f33a5e7b260bc24d10a3a453fb65d64302659da38bbe4e",
+    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/glibc-minimal-langpack-2.28-226.el8.x86_64.rpm"],
 )
 
 rpm(
@@ -1559,9 +1553,9 @@ rpm(
 )
 
 rpm(
-    name = "glibc-static-0__2.28-225.el8.x86_64",
-    sha256 = "eb402d970eb268319a932b184d6fae9b2e730862fd31fdbf3daccee629032fb8",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/PowerTools/x86_64/os/Packages/glibc-static-2.28-225.el8.x86_64.rpm"],
+    name = "glibc-static-0__2.28-226.el8.x86_64",
+    sha256 = "117ca4e54e011652bef448555ab3944f0bcfd889ec538cbc7cf040c11bd99555",
+    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/PowerTools/x86_64/os/Packages/glibc-static-2.28-226.el8.x86_64.rpm"],
 )
 
 rpm(
@@ -1634,18 +1628,6 @@ rpm(
     name = "gnutls-utils-0__3.6.16-6.el8.x86_64",
     sha256 = "ce260c04822b7b38fe009180c1ada312f81ff1b58a35d0e2734de02e1d7bb8ca",
     urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/AppStream/x86_64/os/Packages/gnutls-utils-3.6.16-6.el8.x86_64.rpm"],
-)
-
-rpm(
-    name = "google-noto-fonts-common-0__20161022-7.el8.1.x86_64",
-    sha256 = "d90f65b0b7c294e6114387dfcc06e60fe2c8a473f6df691bc468fc909ae2b2de",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/AppStream/x86_64/os/Packages/google-noto-fonts-common-20161022-7.el8.1.noarch.rpm"],
-)
-
-rpm(
-    name = "google-noto-sans-fonts-0__20161022-7.el8.1.x86_64",
-    sha256 = "2e9a537bd13169634052feb9411c2f4c315c57d791a260b615c42b1b6e44f002",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/AppStream/x86_64/os/Packages/google-noto-sans-fonts-20161022-7.el8.1.noarch.rpm"],
 )
 
 rpm(
@@ -1802,81 +1784,81 @@ rpm(
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-img-17__7.0.50-v1.4.mvp7.el8.x86_64",
-    sha256 = "937181e8e5db8fc5103f22fde7445320a75cc72a01c33b79c05ee63d0135f49b",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-img-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-img-17__7.0.50-v1.5.mvp9.el8.x86_64",
+    sha256 = "a8e9a42edd67e540f6b902ae569a18b46fba35483c7d6a461be111a0ca61950a",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-img-7.0.50-v1.5.mvp9.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-17__7.0.50-v1.4.mvp7.el8.x86_64",
-    sha256 = "1a1b84c60eef56f5d76c238eb28e6d065fdeb3cda5f61607edc879b82bcf97bc",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-17__7.0.50-v1.5.mvp9.el8.x86_64",
+    sha256 = "0a65258db0ac6ce51929ce361b4a2ebcf052d0d0d519db30a6aa0f2f6621df99",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-7.0.50-v1.5.mvp9.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-audio-pa-17__7.0.50-v1.4.mvp7.el8.x86_64",
-    sha256 = "8f2111233f4ab49a3e187774e72d583e1db4ea5bc3e984ca53de17820aff2fee",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-audio-pa-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-audio-pa-17__7.0.50-v1.5.mvp9.el8.x86_64",
+    sha256 = "fc6d186fc7c6b5041e0c9f8f9440a776251058702a6eff40797b565d17d15817",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-audio-pa-7.0.50-v1.5.mvp9.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-block-rbd-17__7.0.50-v1.4.mvp7.el8.x86_64",
-    sha256 = "16c33499fcd72b59cb2c45dfc83e1e44ce78dc9de2c1bf15199e789fc42579a4",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-block-rbd-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-block-rbd-17__7.0.50-v1.5.mvp9.el8.x86_64",
+    sha256 = "25c29f7210d9927d2f4ea4facf2c54488e1998d33860471ed7c84ad7c8abe1bc",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-block-rbd-7.0.50-v1.5.mvp9.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-common-17__7.0.50-v1.4.mvp7.el8.x86_64",
-    sha256 = "3053ec69490d34cf6160e64d613441bf340ba9d9fdf1cfa1d843cf8a0fa182c0",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-common-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-common-17__7.0.50-v1.5.mvp9.el8.x86_64",
+    sha256 = "5aa18c8d86331583b62f32bfc65c2def590444832b992a11af91019556583769",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-common-7.0.50-v1.5.mvp9.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-core-17__7.0.50-v1.4.mvp7.el8.x86_64",
-    sha256 = "160082a3e87aef699429f0167a44800080a2326ccb5cc4ffee55a408ccefb6ff",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-core-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-core-17__7.0.50-v1.5.mvp9.el8.x86_64",
+    sha256 = "a69cc2639161a8a6ac944716cab709f9dda30d45e658c7221fbf30454ef3b9c8",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-core-7.0.50-v1.5.mvp9.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-docs-17__7.0.50-v1.4.mvp7.el8.x86_64",
-    sha256 = "59aa4a44eed7907292b14b03236de1314712f4c926468e89ac781903dfb9d45c",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-docs-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-docs-17__7.0.50-v1.5.mvp9.el8.x86_64",
+    sha256 = "fb3860c57f6240d6494f1dbc36156ac3b908ed20d999ac0598bcd20d17d04b6e",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-docs-7.0.50-v1.5.mvp9.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-hw-usbredir-17__7.0.50-v1.4.mvp7.el8.x86_64",
-    sha256 = "08ff2ef9490bbb96bb2c4d19a8dfd4f6a9de4862749daff2a305ab0194352716",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-hw-usbredir-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-hw-usbredir-17__7.0.50-v1.5.mvp9.el8.x86_64",
+    sha256 = "42d2cc54b67429bc85e8ee583596e4e0fdbaa53e3640fbe1be28e5b6c47dc56f",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-hw-usbredir-7.0.50-v1.5.mvp9.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-tools-17__7.0.50-v1.4.mvp7.el8.x86_64",
-    sha256 = "6917cb16cd38a089f068e60f560d8fd1d5ecda95b3b2fab4b2eab3a1167996d0",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-tools-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-tools-17__7.0.50-v1.5.mvp9.el8.x86_64",
+    sha256 = "79584f45877d5bad5bd5d8870076d01e82e7328eed88a625bc580bb3fd1129b8",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-tools-7.0.50-v1.5.mvp9.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-ui-opengl-17__7.0.50-v1.4.mvp7.el8.x86_64",
-    sha256 = "79ffee617a1bec53d932932cddde050f11285434e175192f18d70a627a757342",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-ui-opengl-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-ui-opengl-17__7.0.50-v1.5.mvp9.el8.x86_64",
+    sha256 = "f338f09decfe060dea2af9b125084cd2663c09ad030e094598b2156b4249f3d6",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-ui-opengl-7.0.50-v1.5.mvp9.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-kvm-ui-spice-17__7.0.50-v1.4.mvp7.el8.x86_64",
-    sha256 = "23b393872e9eaf45cda46d4d16a05d3714ab7bdbddec4f4547ebcfb05157b75f",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-ui-spice-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-kvm-ui-spice-17__7.0.50-v1.5.mvp9.el8.x86_64",
+    sha256 = "d86197e7f0e69594381ad389f794382cc0e17b03fc895e75cec9c9b5f5381d71",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-kvm-ui-spice-7.0.50-v1.5.mvp9.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-pr-helper-17__7.0.50-v1.4.mvp7.el8.x86_64",
-    sha256 = "8948e8b7cc790deed5fc5895937c818d0c36c38c175df8144e969c90645ca20d",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-pr-helper-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-pr-helper-17__7.0.50-v1.5.mvp9.el8.x86_64",
+    sha256 = "c9a8dd74b37be1e91392e761ab9803f36969409a47242fe2bf53af54cdd0b575",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-pr-helper-7.0.50-v1.5.mvp9.el8.x86_64.rpm"],
 )
 
 rpm(
-    name = "intel-mvp-tdx-qemu-virtiofsd-17__7.0.50-v1.4.mvp7.el8.x86_64",
-    sha256 = "9979e90e6a0276114f1b7c3243457fe636580899aad1d3dd41ef567930fb0dd4",
-    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-virtiofsd-7.0.50-v1.4.mvp7.el8.x86_64.rpm"],
+    name = "intel-mvp-tdx-qemu-virtiofsd-17__7.0.50-v1.5.mvp9.el8.x86_64",
+    sha256 = "7135b9b2adb607ff8f51d156f17e2724f221b88f87bdcd57f9cad8236713b998",
+    urls = ["http://css-devops.sh.intel.com/download/mvp-stacks/1.0/mvp-tdx-stack-host-rhel-8/x86_64/intel-mvp-tdx-qemu-virtiofsd-7.0.50-v1.5.mvp9.el8.x86_64.rpm"],
 )
 
 rpm(
@@ -2051,9 +2033,9 @@ rpm(
 )
 
 rpm(
-    name = "kernel-headers-0__4.18.0-490.el8.x86_64",
-    sha256 = "60c51ccbd42cac84c0c1f2024dee4f8f6fe978dc9c196e0ac68b97965371df95",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/kernel-headers-4.18.0-490.el8.x86_64.rpm"],
+    name = "kernel-headers-0__4.18.0-492.el8.x86_64",
+    sha256 = "0f36ef261ffd4fa8a171111e69b609a325f95ee02046b7d04bece648240d8f5b",
+    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/kernel-headers-4.18.0-492.el8.x86_64.rpm"],
 )
 
 rpm(
@@ -4073,6 +4055,12 @@ rpm(
 )
 
 rpm(
+    name = "paktype-naqsh-fonts-0__4.1-8.el8.x86_64",
+    sha256 = "e33a96ba0d7349689c284200ad192040c395e589f66bcf8d2cb5549ebdb20b2c",
+    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/AppStream/x86_64/os/Packages/paktype-naqsh-fonts-4.1-8.el8.noarch.rpm"],
+)
+
+rpm(
     name = "pam-0__1.3.1-22.el8.aarch64",
     sha256 = "b900edf1f702460be4a6b2e402e02887068fe9172b88256660b8c20b89a772d5",
     urls = [
@@ -4925,9 +4913,9 @@ rpm(
 )
 
 rpm(
-    name = "selinux-policy-0__3.14.3-119.el8.x86_64",
-    sha256 = "be79568fc7c32f0a86e0b0e1d74bfa3508b364652ff166f19df75a0014eb0a2f",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/selinux-policy-3.14.3-119.el8.noarch.rpm"],
+    name = "selinux-policy-0__3.14.3-120.el8.x86_64",
+    sha256 = "c807f02468f6d585e5d19daec5cdbd1eceb3cf86d4033d6f89aa7b08c73516ce",
+    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/selinux-policy-3.14.3-120.el8.noarch.rpm"],
 )
 
 rpm(
@@ -4940,9 +4928,9 @@ rpm(
 )
 
 rpm(
-    name = "selinux-policy-targeted-0__3.14.3-119.el8.x86_64",
-    sha256 = "6f6421fdfb2583967037c160e39ab854ea8aac912236d512bf675f1d17a3e068",
-    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/selinux-policy-targeted-3.14.3-119.el8.noarch.rpm"],
+    name = "selinux-policy-targeted-0__3.14.3-120.el8.x86_64",
+    sha256 = "f2cc49e08d53c73cbffc9a5859c1c39e32585164fdee1201b3e4059bc5301ab5",
+    urls = ["http://linux-ftp.sh.intel.com/pub/mirrors/centos/8-stream/BaseOS/x86_64/os/Packages/selinux-policy-targeted-3.14.3-120.el8.noarch.rpm"],
 )
 
 rpm(
