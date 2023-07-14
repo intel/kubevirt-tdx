@@ -656,12 +656,18 @@ type DiskTarget struct {
 type LaunchSecurity struct {
 	// AMD Secure Encrypted Virtualization (SEV).
 	SEV *SEV `json:"sev,omitempty"`
+	TDX *TDX `json:"tdx,omitempty"`
 }
 
 type SEV struct {
 	// Guest policy flags as defined in AMD SEV API specification.
 	// Note: due to security reasons it is not allowed to enable guest debugging. Therefore NoDebug flag is not exposed to users and is always true.
 	Policy *SEVPolicy `json:"policy,omitempty"`
+}
+
+type TDX struct {
+	// TDVMCALL for Quote Generation Service connection
+	QGS string `json:"QGS,omitempty"`
 }
 
 type SEVPolicy struct {

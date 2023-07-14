@@ -6285,6 +6285,12 @@ var CRDsValidation map[string]string = map[string]string{
                                   type: boolean
                               type: object
                           type: object
+                        tdx:
+                          properties:
+                            QGS:
+                              description: TDVMCALL for Quote Generation Service connection
+                              type: string
+                          type: object
                       type: object
                     machine:
                       description: Machine type.
@@ -8002,6 +8008,12 @@ var CRDsValidation map[string]string = map[string]string{
                       description: SEV-ES is required. Defaults to false.
                       type: boolean
                   type: object
+              type: object
+            tdx:
+              properties:
+                QGS:
+                  description: TDVMCALL for Quote Generation Service connection
+                  type: string
               type: object
           type: object
         memory:
@@ -10720,6 +10732,12 @@ var CRDsValidation map[string]string = map[string]string{
                           type: boolean
                       type: object
                   type: object
+                tdx:
+                  properties:
+                    QGS:
+                      description: TDVMCALL for Quote Generation Service connection
+                      type: string
+                  type: object
               type: object
             machine:
               description: Machine type.
@@ -13371,6 +13389,12 @@ var CRDsValidation map[string]string = map[string]string{
                           type: boolean
                       type: object
                   type: object
+                tdx:
+                  properties:
+                    QGS:
+                      description: TDVMCALL for Quote Generation Service connection
+                      type: string
+                  type: object
               type: object
             machine:
               description: Machine type.
@@ -15536,6 +15560,12 @@ var CRDsValidation map[string]string = map[string]string{
                                   type: boolean
                               type: object
                           type: object
+                        tdx:
+                          properties:
+                            QGS:
+                              description: TDVMCALL for Quote Generation Service connection
+                              type: string
+                          type: object
                       type: object
                     machine:
                       description: Machine type.
@@ -16764,6 +16794,12 @@ var CRDsValidation map[string]string = map[string]string{
                       description: SEV-ES is required. Defaults to false.
                       type: boolean
                   type: object
+              type: object
+            tdx:
+              properties:
+                QGS:
+                  description: TDVMCALL for Quote Generation Service connection
+                  type: string
               type: object
           type: object
         memory:
@@ -19827,6 +19863,13 @@ var CRDsValidation map[string]string = map[string]string{
                                             to false.
                                           type: boolean
                                       type: object
+                                  type: object
+                                tdx:
+                                  properties:
+                                    QGS:
+                                      description: TDVMCALL for Quote Generation Service
+                                        connection
+                                      type: string
                                   type: object
                               type: object
                             machine:
@@ -24909,6 +24952,13 @@ var CRDsValidation map[string]string = map[string]string{
                                                 to false.
                                               type: boolean
                                           type: object
+                                      type: object
+                                    tdx:
+                                      properties:
+                                        QGS:
+                                          description: TDVMCALL for Quote Generation
+                                            Service connection
+                                          type: string
                                       type: object
                                   type: object
                                 machine:

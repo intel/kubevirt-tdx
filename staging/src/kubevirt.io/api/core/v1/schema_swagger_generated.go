@@ -371,6 +371,12 @@ func (SEV) SwaggerDoc() map[string]string {
 	}
 }
 
+func (TDX) SwaggerDoc() map[string]string {
+	return map[string]string{
+		"QGS": "TDVMCALL for Quote Generation Service connection",
+	}
+}
+
 func (SEVPolicy) SwaggerDoc() map[string]string {
 	return map[string]string{
 		"encryptedState": "SEV-ES is required.\nDefaults to false.\n+optional",

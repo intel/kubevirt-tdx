@@ -17708,6 +17708,9 @@
      "sev": {
       "description": "AMD Secure Encrypted Virtualization (SEV).",
       "$ref": "#/definitions/v1.SEV"
+     },
+     "tdx": {
+      "$ref": "#/definitions/v1.TDX"
      }
     }
    },
@@ -18747,6 +18750,15 @@
      "secret": {
       "description": "Secret references a k8s Secret that contains Sysprep answer file named autounattend.xml that should be attached as disk of CDROM type.",
       "$ref": "#/definitions/k8s.io.api.core.v1.LocalObjectReference"
+     }
+    }
+   },
+   "v1.TDX": {
+    "type": "object",
+    "properties": {
+     "QGS": {
+      "description": "TDVMCALL for Quote Generation Service connection",
+      "type": "string"
      }
     }
    },
