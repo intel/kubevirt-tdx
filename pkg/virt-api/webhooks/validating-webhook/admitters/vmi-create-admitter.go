@@ -882,35 +882,44 @@ func validateSoundDevices(field *k8sfield.Path, spec *v1.VirtualMachineInstanceS
 
 func validateLaunchSecurity(field *k8sfield.Path, spec *v1.VirtualMachineInstanceSpec, config *virtconfig.ClusterConfig) (causes []metav1.StatusCause) {
 	launchSecurity := spec.Domain.LaunchSecurity
-	if launchSecurity != nil && !config.WorkloadEncryptionSEVEnabled() {
-		causes = append(causes, metav1.StatusCause{
-			Type:    metav1.CauseTypeFieldValueInvalid,
-			Message: fmt.Sprintf("%s feature gate is not enabled in kubevirt-config", virtconfig.WorkloadEncryptionSEV),
-			Field:   field.Child("launchSecurity").String(),
-		})
-	} else if launchSecurity != nil && launchSecurity.SEV != nil {
-		firmware := spec.Domain.Firmware
-		if firmware == nil || firmware.Bootloader == nil || firmware.Bootloader.EFI == nil {
+	if launchSecurity != nil {
+		if !config.WorkloadEncryptionSEVEnabled() && !config.WorkloadEncryptionTDXEnabled() {
 			causes = append(causes, metav1.StatusCause{
 				Type:    metav1.CauseTypeFieldValueInvalid,
-				Message: "SEV requires OVMF (UEFI)",
+				Message: "neither WorkloadEncryptionSEV nor WorkloadEncryptionTDX feature gate is not enabled in kubevirt-config",
 				Field:   field.Child("launchSecurity").String(),
 			})
-		} else if firmware.Bootloader.EFI.SecureBoot == nil || *firmware.Bootloader.EFI.SecureBoot {
+		} else if config.WorkloadEncryptionSEVEnabled() && config.WorkloadEncryptionTDXEnabled() {
 			causes = append(causes, metav1.StatusCause{
 				Type:    metav1.CauseTypeFieldValueInvalid,
-				Message: "SEV does not work along with SecureBoot",
+				Message: "WorkloadEncryptionSEV and WorkloadEncryptionTDX cannot coexist",
 				Field:   field.Child("launchSecurity").String(),
 			})
 		}
-
-		for _, iface := range spec.Domain.Devices.Interfaces {
-			if iface.BootOrder != nil {
+		if launchSecurity.TDX != nil || launchSecurity.SEV != nil {
+			firmware := spec.Domain.Firmware
+			if firmware == nil || firmware.Bootloader == nil || firmware.Bootloader.EFI == nil {
 				causes = append(causes, metav1.StatusCause{
 					Type:    metav1.CauseTypeFieldValueInvalid,
-					Message: fmt.Sprintf("SEV does not work with bootable NICs: %s", iface.Name),
+					Message: "WorkloadEncryption requires OVMF (UEFI)",
 					Field:   field.Child("launchSecurity").String(),
 				})
+			} else if firmware.Bootloader.EFI.SecureBoot == nil || *firmware.Bootloader.EFI.SecureBoot {
+				causes = append(causes, metav1.StatusCause{
+					Type:    metav1.CauseTypeFieldValueInvalid,
+					Message: "WorkloadEncryption does not work along with SecureBoot",
+					Field:   field.Child("launchSecurity").String(),
+				})
+			}
+
+			for _, iface := range spec.Domain.Devices.Interfaces {
+				if iface.BootOrder != nil {
+					causes = append(causes, metav1.StatusCause{
+						Type:    metav1.CauseTypeFieldValueInvalid,
+						Message: fmt.Sprintf("WorkloadEncryption does not work with bootable NICs: %s", iface.Name),
+						Field:   field.Child("launchSecurity").String(),
+					})
+				}
 			}
 		}
 	}
