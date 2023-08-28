@@ -97,6 +97,11 @@ func (mutator *VMIsMutator) Mutate(ar *admissionv1.AdmissionReview) *admissionv1
 			addNodeSelector(newVMI, v1.SEVESLabel)
 		}
 
+		if util.IsTDXVMI(newVMI) {
+			log.Log.V(4).Info("Add TDX node label selector")
+			addNodeSelector(newVMI, v1.TDXLabel)
+		}
+
 		// Add foreground finalizer
 		newVMI.Finalizers = append(newVMI.Finalizers, v1.VirtualMachineInstanceFinalizer)
 

@@ -1153,4 +1153,28 @@ var _ = Describe("VirtualMachineInstance Mutator", func() {
 				},
 			}),
 	)
+
+	DescribeTable("When scheduling TDX workloads",
+		func(nodeSelectorBefore map[string]string,
+			nodeSelectorAfter map[string]string,
+			launchSec *v1.LaunchSecurity) {
+			vmi.Spec.NodeSelector = nodeSelectorBefore
+			vmi.Spec.Domain.LaunchSecurity = launchSec
+			_, vmiSpec, _ := getMetaSpecStatusFromAdmit(rt.GOARCH)
+			Expect(vmiSpec.NodeSelector).NotTo(BeNil())
+			Expect(vmiSpec.NodeSelector).To(BeEquivalentTo(nodeSelectorAfter))
+		},
+		Entry("It should add TDX node label selector with TDX workload",
+			map[string]string{},
+			map[string]string{v1.TDXLabel: ""},
+			&v1.LaunchSecurity{TDX: &v1.TDX{}}),
+		Entry("It should not add TDX node label selector when no TDX workload",
+			map[string]string{v1.NodeSchedulable: "true"},
+			map[string]string{v1.NodeSchedulable: "true"},
+			&v1.LaunchSecurity{}),
+		Entry("It should not overwrite existing node label selectors with TDX workload",
+			map[string]string{v1.NodeSchedulable: "true"},
+			map[string]string{v1.NodeSchedulable: "true", v1.TDXLabel: ""},
+			&v1.LaunchSecurity{TDX: &v1.TDX{}}),
+	)
 })
