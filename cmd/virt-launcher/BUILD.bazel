@@ -163,6 +163,16 @@ pkg_tar(
     owner = "0.0",
 )
 
+# Workaround for pty console in the rootless container
+pkg_tar(
+    name = "pts-lock-tar",
+    empty_dirs = [
+        "var/lock",
+    ],
+    mode = "0755",
+    owner = "0.0",
+)
+
 container_image(
     name = "version-container",
     directory = "/",
@@ -180,6 +190,7 @@ container_image(
             ":passwd-tar",
             ":nsswitch-tar",
             ":qemu-kvm-modules-dir-tar",
+            ":pts-lock-tar",
             "//rpm:launcherbase_x86_64",
         ],
     }),
