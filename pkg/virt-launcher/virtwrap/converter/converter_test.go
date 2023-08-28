@@ -52,7 +52,7 @@ import (
 	kvapi "kubevirt.io/client-go/api"
 
 	cmdv1 "kubevirt.io/kubevirt/pkg/handler-launcher-com/cmd/v1"
-	sev "kubevirt.io/kubevirt/pkg/virt-launcher/virtwrap/launchsecurity"
+	"kubevirt.io/kubevirt/pkg/virt-launcher/virtwrap/launchsecurity"
 )
 
 var _ = Describe("getOptimalBlockIO", func() {
@@ -3219,9 +3219,9 @@ var _ = Describe("Converter", func() {
 				},
 			}
 			c = &ConverterContext{
-				AllowEmulation:    true,
-				EFIConfiguration:  &EFIConfiguration{},
-				UseLaunchSecurity: true,
+				AllowEmulation:       true,
+				EFIConfiguration:     &EFIConfiguration{},
+				UseLaunchSecuritySEV: true,
 			}
 		})
 
@@ -3230,7 +3230,7 @@ var _ = Describe("Converter", func() {
 			Expect(domain).ToNot(BeNil())
 			Expect(domain.Spec.LaunchSecurity).ToNot(BeNil())
 			Expect(domain.Spec.LaunchSecurity.Type).To(Equal("sev"))
-			Expect(domain.Spec.LaunchSecurity.Policy).To(Equal("0x" + strconv.FormatUint(uint64(sev.SEVPolicyNoDebug), 16)))
+			Expect(domain.Spec.LaunchSecurity.Policy).To(Equal("0x" + strconv.FormatUint(uint64(launchsecurity.SEVPolicyNoDebug), 16)))
 		})
 
 		It("should set LaunchSecurity domain element with 'sev' type with 'NoDebug' and 'EncryptedState' policy bits", func() {
@@ -3246,7 +3246,7 @@ var _ = Describe("Converter", func() {
 			Expect(domain).ToNot(BeNil())
 			Expect(domain.Spec.LaunchSecurity).ToNot(BeNil())
 			Expect(domain.Spec.LaunchSecurity.Type).To(Equal("sev"))
-			Expect(domain.Spec.LaunchSecurity.Policy).To(Equal("0x" + strconv.FormatUint(uint64(sev.SEVPolicyNoDebug|sev.SEVPolicyEncryptedState), 16)))
+			Expect(domain.Spec.LaunchSecurity.Policy).To(Equal("0x" + strconv.FormatUint(uint64(launchsecurity.SEVPolicyNoDebug|launchsecurity.SEVPolicyEncryptedState), 16)))
 		})
 
 		It("should set IOMMU attribute of the RngDriver", func() {
@@ -3292,6 +3292,52 @@ var _ = Describe("Converter", func() {
 			Expect(domain.Spec.Devices.Interfaces[0].Rom.Enabled).To(Equal("no"))
 			Expect(domain.Spec.Devices.Interfaces[1].Rom).ToNot(BeNil())
 			Expect(domain.Spec.Devices.Interfaces[1].Rom.Enabled).To(Equal("no"))
+		})
+	})
+
+	Context("with Intel TDX LaunchSecurity", func() {
+		var (
+			vmi *v1.VirtualMachineInstance
+			c   *ConverterContext
+		)
+
+		BeforeEach(func() {
+			vmi = kvapi.NewMinimalVMI("testvmi")
+			v1.SetObjectDefaults_VirtualMachineInstance(vmi)
+			vmi.Spec.Domain.Devices.Interfaces = []v1.Interface{
+				*v1.DefaultBridgeNetworkInterface(), *v1.DefaultSlirpNetworkInterface(),
+			}
+			vmi.Spec.Networks = []v1.Network{
+				*v1.DefaultPodNetwork(), *v1.DefaultPodNetwork(),
+			}
+			vmi.Spec.Domain.LaunchSecurity = &v1.LaunchSecurity{
+				TDX: &v1.TDX{},
+			}
+			vmi.Spec.Domain.Features = &v1.Features{
+				SMM: &v1.FeatureState{
+					Enabled: pointer.BoolPtr(false),
+				},
+			}
+			vmi.Spec.Domain.Firmware = &v1.Firmware{
+				Bootloader: &v1.Bootloader{
+					EFI: &v1.EFI{
+						SecureBoot: pointer.BoolPtr(false),
+					},
+				},
+			}
+			c = &ConverterContext{
+				AllowEmulation:       true,
+				EFIConfiguration:     &EFIConfiguration{},
+				UseLaunchSecurityTDX: true,
+			}
+		})
+
+		It("should set LaunchSecurity domain element with 'tdx' type and 'NoDebug' policy", func() {
+			domain := vmiToDomain(vmi, c)
+			Expect(domain).ToNot(BeNil())
+			Expect(domain.Spec.LaunchSecurity).ToNot(BeNil())
+			Expect(domain.Spec.LaunchSecurity.Type).To(Equal("tdx"))
+			Expect(domain.Spec.LaunchSecurity.Policy).To(Equal(launchsecurity.TDXPolicyNoDebug))
 		})
 	})
 

@@ -113,6 +113,11 @@ func IsSEVESVMI(vmi *v1.VirtualMachineInstance) bool {
 		*vmi.Spec.Domain.LaunchSecurity.SEV.Policy.EncryptedState == true
 }
 
+// Check if a VMI spec requests Intel TDX
+func IsTDXVMI(vmi *v1.VirtualMachineInstance) bool {
+	return vmi.Spec.Domain.LaunchSecurity != nil && vmi.Spec.Domain.LaunchSecurity.TDX != nil
+}
+
 func IsVmiUsingHyperVReenlightenment(vmi *v1.VirtualMachineInstance) bool {
 	if vmi == nil {
 		return false
