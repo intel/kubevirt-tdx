@@ -181,6 +181,15 @@ func WithSEV(isESEnabled bool) Option {
 	}
 }
 
+// WithTDX adds `launchSecurity` with `tdx`.
+func WithTDX() Option {
+	return func(vmi *v1.VirtualMachineInstance) {
+		vmi.Spec.Domain.LaunchSecurity = &v1.LaunchSecurity{
+			TDX: &v1.TDX{},
+		}
+	}
+}
+
 func WithCPUFeature(featureName, policy string) Option {
 	return func(vmi *v1.VirtualMachineInstance) {
 		if vmi.Spec.Domain.CPU == nil {

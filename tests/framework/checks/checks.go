@@ -76,6 +76,16 @@ func IsSEVCapable(node *v1.Node, sevLabel string) bool {
 	return false
 }
 
+func IsTDXCapable(node *v1.Node) bool {
+	gomega.Expect(node).ToNot(gomega.BeNil())
+	for label, _ := range node.Labels {
+		if label == v12.TDXLabel {
+			return true
+		}
+	}
+	return false
+}
+
 func IsARM64(arch string) bool {
 	return arch == "arm64"
 }

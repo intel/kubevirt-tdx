@@ -139,6 +139,19 @@ func SkipTestIfNotSEVESCapable() {
 	ginkgo.Skip("no node capable of running SEV-ES workloads detected", 1)
 }
 
+func SkipTestIfNotTDXCapable() {
+	virtClient, err := kubecli.GetKubevirtClient()
+	util.PanicOnError(err)
+	nodes := libnode.GetAllSchedulableNodes(virtClient)
+
+	for _, node := range nodes.Items {
+		if IsTDXCapable(&node) {
+			return
+		}
+	}
+	ginkgo.Skip("no node capable of running TDX workloads detected", 1)
+}
+
 func SkipIfNonRoot(feature string) {
 	if HasFeature(virtconfig.NonRoot) {
 		ginkgo.Skip(fmt.Sprintf("NonRoot implementation doesn't support %s", feature))
