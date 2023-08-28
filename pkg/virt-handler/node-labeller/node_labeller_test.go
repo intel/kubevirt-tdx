@@ -189,6 +189,12 @@ var _ = Describe("Node-labeller ", func() {
 		Expect(res).To(BeTrue())
 	})
 
+	It("should add TDX label", func() {
+		expectNodePatch(kubevirtv1.TDXLabel)
+		res := nlController.execute()
+		Expect(res).To(BeTrue())
+	})
+
 	It("should add usable cpu model labels for the host cpu model", func() {
 		expectNodePatch(
 			kubevirtv1.HostModelCPULabel+"Skylake-Client-IBRS",

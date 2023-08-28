@@ -923,6 +923,9 @@ const (
 	// SEVESLabel marks the node as capable of running workloads with SEV-ES
 	SEVESLabel string = "kubevirt.io/sev-es"
 
+	// TDXLabel marks the node as capable of running workloads with Intel TDX
+	TDXLabel string = "kubevirt.io/tdx"
+
 	// KSMEnabledLabel marks the node as KSM enabled
 	KSMEnabledLabel string = "kubevirt.io/ksm-enabled"
 

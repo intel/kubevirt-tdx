@@ -40,6 +40,7 @@ type cpuInfo struct {
 type HostDomCapabilities struct {
 	CPU CPU              `xml:"cpu"`
 	SEV SEVConfiguration `xml:"features>sev"`
+	TDX TDXConfiguration `xml:"features>tdx"`
 }
 
 // CPU represents slice of cpu modes
@@ -99,6 +100,9 @@ type SEVConfiguration struct {
 	SupportedES     string `xml:"-"`
 }
 
+type TDXConfiguration struct {
+	Supported string `xml:"supported,attr"`
+}
 type KSMConfiguration struct {
 	Available     bool
 	SysfsFilePath string

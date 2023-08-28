@@ -64,6 +64,7 @@ var nodeLabellerLabels = []string{
 	kubevirtv1.RealtimeLabel,
 	kubevirtv1.SEVLabel,
 	kubevirtv1.SEVESLabel,
+	kubevirtv1.TDXLabel,
 	kubevirtv1.HostModelCPULabel,
 	kubevirtv1.HostModelRequiredFeaturesLabel,
 	kubevirtv1.NodeHostModelIsObsoleteLabel,
@@ -89,6 +90,7 @@ type NodeLabeller struct {
 	capabilities            *api.Capabilities
 	hostCPUModel            hostCPUModel
 	SEV                     SEVConfiguration
+	TDX                     TDXConfiguration
 	KSM                     KSMConfiguration
 }
 
@@ -329,6 +331,10 @@ func (n *NodeLabeller) prepareLabels(node *v1.Node, cpuModels []string, cpuFeatu
 
 	if n.SEV.SupportedES == "yes" {
 		newLabels[kubevirtv1.SEVESLabel] = ""
+	}
+
+	if n.TDX.Supported == "yes" {
+		newLabels[kubevirtv1.TDXLabel] = ""
 	}
 
 	if n.KSM.Enabled {
