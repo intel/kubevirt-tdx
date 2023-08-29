@@ -298,6 +298,7 @@ type Features struct {
 	KVM        *FeatureKVM        `xml:"kvm,omitempty"`
 	PVSpinlock *FeaturePVSpinlock `xml:"pvspinlock,omitempty"`
 	PMU        *FeatureState      `xml:"pmu,omitempty"`
+	IOAPIC     *FeatureIOAPIC     `xml:"ioapic,omitempty"`
 }
 
 type FeatureHyperv struct {
@@ -320,6 +321,10 @@ type FeatureHyperv struct {
 type FeatureSpinlocks struct {
 	State   string  `xml:"state,attr,omitempty"`
 	Retries *uint32 `xml:"retries,attr,omitempty"`
+}
+
+type FeatureIOAPIC struct {
+	Driver string `xml:"driver,attr,omitempty"`
 }
 
 type SyNICTimer struct {
