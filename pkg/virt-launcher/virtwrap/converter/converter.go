@@ -1446,6 +1446,13 @@ func Convert_v1_VirtualMachineInstance_To_api_Domain(vmi *v1.VirtualMachineInsta
 		}
 	}
 
+	if c.UseLaunchSecurityTDX {
+		if domain.Spec.MemoryBacking == nil {
+			domain.Spec.MemoryBacking = &api.MemoryBacking{}
+		}
+		domain.Spec.MemoryBacking.Source = &api.MemoryBackingSource{Type: "memfd-private"}
+	}
+
 	volumeIndices := map[string]int{}
 	volumes := map[string]*v1.Volume{}
 	for i, volume := range vmi.Spec.Volumes {
