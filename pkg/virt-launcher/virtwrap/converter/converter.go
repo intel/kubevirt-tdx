@@ -90,6 +90,7 @@ type deviceNamer struct {
 }
 
 type EFIConfiguration struct {
+	EFI          string
 	EFICode      string
 	EFIVars      string
 	SecureLoader bool
@@ -1276,16 +1277,24 @@ func Convert_v1_VirtualMachineInstance_To_api_Domain(vmi *v1.VirtualMachineInsta
 		}
 
 		if vmi.Spec.Domain.Firmware.Bootloader != nil && vmi.Spec.Domain.Firmware.Bootloader.EFI != nil {
-			domain.Spec.OS.BootLoader = &api.Loader{
-				Path:     c.EFIConfiguration.EFICode,
-				ReadOnly: "yes",
-				Secure:   boolToYesNo(&c.EFIConfiguration.SecureLoader, false),
-				Type:     "pflash",
-			}
+			if c.UseLaunchSecurityTDX {
+				// tdx use ovmf single binary
+				domain.Spec.OS.BootLoader = &api.Loader{
+					Path:   c.EFIConfiguration.EFI,
+					Secure: boolToYesNo(&c.EFIConfiguration.SecureLoader, false),
+				}
+			} else {
+				domain.Spec.OS.BootLoader = &api.Loader{
+					Path:     c.EFIConfiguration.EFICode,
+					ReadOnly: "yes",
+					Secure:   boolToYesNo(&c.EFIConfiguration.SecureLoader, false),
+					Type:     "pflash",
+				}
 
-			domain.Spec.OS.NVRam = &api.NVRam{
-				NVRam:    filepath.Join("/tmp", domain.Spec.Name),
-				Template: c.EFIConfiguration.EFIVars,
+				domain.Spec.OS.NVRam = &api.NVRam{
+					NVRam:    filepath.Join("/tmp", domain.Spec.Name),
+					Template: c.EFIConfiguration.EFIVars,
+				}
 			}
 		}
 

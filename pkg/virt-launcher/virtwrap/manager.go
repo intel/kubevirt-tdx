@@ -872,6 +872,7 @@ func (l *LibvirtDomainManager) generateConverterContext(vmi *v1.VirtualMachineIn
 		}
 
 		efiConf = &converter.EFIConfiguration{
+			EFI:          l.efiEnvironment.EFI(),
 			EFICode:      l.efiEnvironment.EFICode(secureBoot, sev),
 			EFIVars:      l.efiEnvironment.EFIVars(secureBoot, sev),
 			SecureLoader: secureBoot,
