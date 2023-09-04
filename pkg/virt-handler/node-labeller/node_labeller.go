@@ -264,6 +264,30 @@ func (n *NodeLabeller) patchNode(originalNode, node *v1.Node) error {
 		}
 	}
 
+	// Patch tdx key number into status/capacity on the tdx-enabled host.
+	if n.TDX.Supported == "yes" {
+		TDXKeyNumber, err := n.getTDXKeyNumber()
+		if err != nil {
+			return err
+		}
+
+		payload := make([]patch.PatchOperation, 0)
+		payload = append(payload, patch.PatchOperation{
+			Op:    "add",
+			Path:  "/status/capacity/intel.kubevirt.io~1tdx",
+			Value: TDXKeyNumber,
+		},
+		)
+		payloadBytes, err := json.Marshal(payload)
+		if err != nil {
+			return err
+		}
+		_, err = n.clientset.CoreV1().Nodes().Patch(context.Background(), node.Name, types.JSONPatchType, payloadBytes, metav1.PatchOptions{}, "status")
+		if err != nil {
+			return err
+		}
+	}
+
 	return nil
 }
 

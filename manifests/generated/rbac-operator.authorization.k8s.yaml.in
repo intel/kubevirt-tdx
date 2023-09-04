@@ -717,6 +717,7 @@ rules:
   - ""
   resources:
   - nodes
+  - nodes/status
   verbs:
   - patch
   - list

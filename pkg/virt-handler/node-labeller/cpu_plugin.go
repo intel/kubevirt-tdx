@@ -26,6 +26,8 @@ import (
 	"path/filepath"
 	"strings"
 
+	runc_cgroups "github.com/opencontainers/runc/libcontainer/cgroups"
+
 	v1 "kubevirt.io/api/core/v1"
 	"kubevirt.io/client-go/log"
 
@@ -38,6 +40,7 @@ const (
 	isUnusable             string = "no"
 	isRequired             string = "require"
 	nodeLabellerVolumePath        = "/var/lib/kubevirt-node-labeller/"
+	cgroupBasePath                = "/sys/fs/cgroup"
 
 	supportedFeaturesXml = "supported_features.xml"
 )
@@ -236,4 +239,18 @@ func (n *NodeLabeller) getStructureFromXMLFile(path string, structure interface{
 	n.logger.V(4).Infof("node-labeller - loading data from xml file: %#v", string(rawFile))
 
 	return xml.Unmarshal(rawFile, structure)
+}
+
+// GetTDXKeyNumber gets the total tdx key number based on cgroup path
+func (n *NodeLabeller) getTDXKeyNumber() (string, error) {
+	miscPath := filepath.Join(cgroupBasePath, "misc.capacity")
+	if !runc_cgroups.IsCgroup2UnifiedMode() {
+		miscPath = filepath.Join(cgroupBasePath, "misc", "misc.capacity")
+	}
+
+	result, err := os.ReadFile(miscPath)
+	if err != nil {
+		return "", err
+	}
+	return strings.TrimSpace(strings.Split(string(result), " ")[1]), nil
 }
