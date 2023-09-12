@@ -600,11 +600,10 @@ rpm(
 )
 
 rpm(
-    name = "ca-certificates-0__2022.2.54-90.2.el9.x86_64",
-    sha256 = "24978e8dd3e054583da86036657ab16e93da97a0bafc148ec28d871d8c15257c",
+    name = "ca-certificates-0__2023.2.60_v7.0.306-90.1.el9.x86_64",
+    sha256 = "76d996300aeaf56a06191f8ea2df8387813f4fa8100c6f4c1000073633e1147f",
     urls = [
-        "http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/os/Packages/ca-certificates-2022.2.54-90.2.el9.noarch.rpm",
-        "https://storage.googleapis.com/builddeps/24978e8dd3e054583da86036657ab16e93da97a0bafc148ec28d871d8c15257c",
+        "http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/os/Packages/ca-certificates-2023.2.60_v7.0.306-90.1.el9.noarch.rpm",
     ],
 )
 
@@ -636,10 +635,10 @@ rpm(
 )
 
 rpm(
-    name = "centos-gpg-keys-0__9.0-22.el9.x86_64",
-    sha256 = "108f1f4f4aee8ccdf6535833bbab14bd3808c395ef7d1d425473aee4467e2156",
+    name = "centos-gpg-keys-0__9.0-23.el9.x86_64",
+    sha256 = "23aaff377dffc4a7e82eec56feabe1d80616d818e2160f30b744cd3cde1af17e",
     urls = [
-        "http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/os/Packages/centos-gpg-keys-9.0-22.el9.noarch.rpm",
+        "http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/os/Packages/centos-gpg-keys-9.0-23.el9.noarch.rpm",
     ],
 )
 
@@ -653,10 +652,10 @@ rpm(
 )
 
 rpm(
-    name = "centos-stream-release-0__9.0-22.el9.x86_64",
-    sha256 = "78cc2608d720cb0c4a1528365036a64eb64b622a76e40d0625e805428db0d66a",
+    name = "centos-stream-release-0__9.0-23.el9.x86_64",
+    sha256 = "3077d913caf3ede40e2dec2873492347d363917659d9fc6182f7cf9ae656eb25",
     urls = [
-        "http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/os/Packages/centos-stream-release-9.0-22.el9.noarch.rpm",
+        "http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/os/Packages/centos-stream-release-9.0-23.el9.noarch.rpm",
     ],
 )
 
@@ -670,10 +669,10 @@ rpm(
 )
 
 rpm(
-    name = "centos-stream-repos-0__9.0-22.el9.x86_64",
-    sha256 = "41eee9bd192d069e855f6b8ff43e08e350d02eeab8f47a23aa2fc517936b17cc",
+    name = "centos-stream-repos-0__9.0-23.el9.x86_64",
+    sha256 = "b269292cbdd24f177b4f1c61e75a69a8bb0266aa3ea9c00df6246b8f4e2f6970",
     urls = [
-        "http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/os/Packages/centos-stream-repos-9.0-22.el9.noarch.rpm",
+        "http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/os/Packages/centos-stream-repos-9.0-23.el9.noarch.rpm",
     ],
 )
 
@@ -1407,10 +1406,10 @@ rpm(
 )
 
 rpm(
-    name = "glibc-langpack-tcy-0__2.34-82.el9.x86_64",
-    sha256 = "c7459e4d1ccf305b08e250e6674591642491145d16550dec53d368ec25084ad3",
+    name = "glibc-langpack-ky-0__2.34-82.el9.x86_64",
+    sha256 = "80102b7b297b622c97f411adb9e36210ef2cf6c2d1939d7e9c793704a420f390",
     urls = [
-        "http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/os/Packages/glibc-langpack-tcy-2.34-82.el9.x86_64.rpm",
+        "http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/os/Packages/glibc-langpack-ky-2.34-82.el9.x86_64.rpm",
     ],
 )
 
@@ -3038,14 +3037,6 @@ rpm(
 )
 
 rpm(
-    name = "libvirt-client-0__8.6.0-v3.4.mvp14.el9.x86_64",
-    sha256 = "a87089bc5d5dfcd69513585cc99e196ba09ef9df7caaa7decc5122d0e7000d88",
-    urls = [
-        "http://css-devops.sh.intel.com/download/dry-run/mvp-tdx-stack-host-rhel-9/x86_64/libvirt-client-8.6.0-v3.4.mvp14.el9.x86_64.rpm",
-    ],
-)
-
-rpm(
     name = "libvirt-client-0__9.0.0-3.el9.aarch64",
     sha256 = "fd45fff545f0d4ae8b38371e80ca88982f5a7d0d29a52b7023fda602584e98a5",
     urls = [
@@ -3055,10 +3046,10 @@ rpm(
 )
 
 rpm(
-    name = "libvirt-daemon-0__8.6.0-v3.4.mvp14.el9.x86_64",
-    sha256 = "f1ad62911eb71cde3a9af17c7a99b4589d5155555178517ddcfe28cc4213ab24",
+    name = "libvirt-client-23__8.6.0-v3.5.mvp15.el9.x86_64",
+    sha256 = "7f46af5e5cb6115f4a8d41b32ae28b3ed6295973a512cb76edd8c38aeaf8b80a",
     urls = [
-        "http://css-devops.sh.intel.com/download/dry-run/mvp-tdx-stack-host-rhel-9/x86_64/libvirt-daemon-8.6.0-v3.4.mvp14.el9.x86_64.rpm",
+        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/libvirt-client-8.6.0-v3.5.mvp15.el9.x86_64.rpm",
     ],
 )
 
@@ -3072,10 +3063,10 @@ rpm(
 )
 
 rpm(
-    name = "libvirt-daemon-driver-qemu-0__8.6.0-v3.4.mvp14.el9.x86_64",
-    sha256 = "58291e93bed77b24b7ec8f1f417254fdcdbe1d41507411c2f4265d16399dac10",
+    name = "libvirt-daemon-23__8.6.0-v3.5.mvp15.el9.x86_64",
+    sha256 = "6ae50de21678857d5f8ec5895991a63ae8f252670bd4477157518060ef06f516",
     urls = [
-        "http://css-devops.sh.intel.com/download/dry-run/mvp-tdx-stack-host-rhel-9/x86_64/libvirt-daemon-driver-qemu-8.6.0-v3.4.mvp14.el9.x86_64.rpm",
+        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/libvirt-daemon-8.6.0-v3.5.mvp15.el9.x86_64.rpm",
     ],
 )
 
@@ -3089,26 +3080,26 @@ rpm(
 )
 
 rpm(
-    name = "libvirt-daemon-driver-secret-0__8.6.0-v3.4.mvp14.el9.x86_64",
-    sha256 = "30719e0857456cf06ce030f799f488940a8312ad1b2affdf6e73390e1720704b",
+    name = "libvirt-daemon-driver-qemu-23__8.6.0-v3.5.mvp15.el9.x86_64",
+    sha256 = "cd5e44abd19f81d73d806e88f263ad182688740a8baf9a5c61b4ee6a1f30fcd6",
     urls = [
-        "http://css-devops.sh.intel.com/download/dry-run/mvp-tdx-stack-host-rhel-9/x86_64/libvirt-daemon-driver-secret-8.6.0-v3.4.mvp14.el9.x86_64.rpm",
+        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/libvirt-daemon-driver-qemu-8.6.0-v3.5.mvp15.el9.x86_64.rpm",
     ],
 )
 
 rpm(
-    name = "libvirt-daemon-driver-storage-core-0__8.6.0-v3.4.mvp14.el9.x86_64",
-    sha256 = "59a42efb59e674b1f8dd1b3085d5b5d5bd00c41cf1d107bf2e1d9dec7bbf4451",
+    name = "libvirt-daemon-driver-secret-23__8.6.0-v3.5.mvp15.el9.x86_64",
+    sha256 = "7843723ce0f9f3af91a81e3560a6de99032146af437d768ca085777446104249",
     urls = [
-        "http://css-devops.sh.intel.com/download/dry-run/mvp-tdx-stack-host-rhel-9/x86_64/libvirt-daemon-driver-storage-core-8.6.0-v3.4.mvp14.el9.x86_64.rpm",
+        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/libvirt-daemon-driver-secret-8.6.0-v3.5.mvp15.el9.x86_64.rpm",
     ],
 )
 
 rpm(
-    name = "libvirt-devel-0__8.6.0-v3.4.mvp14.el9.x86_64",
-    sha256 = "0088daccb4b53dddd904ce8529aacc39b583ee80deadd7ca3fb36dc0f71accaf",
+    name = "libvirt-daemon-driver-storage-core-23__8.6.0-v3.5.mvp15.el9.x86_64",
+    sha256 = "7df7eee80f3ef2f8ae966d2fb3f54924354755461d91a9e00dce8c17ebbccaea",
     urls = [
-        "http://css-devops.sh.intel.com/download/dry-run/mvp-tdx-stack-host-rhel-9/x86_64/libvirt-devel-8.6.0-v3.4.mvp14.el9.x86_64.rpm",
+        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/libvirt-daemon-driver-storage-core-8.6.0-v3.5.mvp15.el9.x86_64.rpm",
     ],
 )
 
@@ -3122,10 +3113,10 @@ rpm(
 )
 
 rpm(
-    name = "libvirt-libs-0__8.6.0-v3.4.mvp14.el9.x86_64",
-    sha256 = "67f37a19cd5f9d2b39094913ded99020a35223254ce8582a8ea47ad454d36f6f",
+    name = "libvirt-devel-23__8.6.0-v3.5.mvp15.el9.x86_64",
+    sha256 = "8ccef43c81d6bc36a19c0b1e160042ae9d30dd17a9c25541112e707b66a5e2f5",
     urls = [
-        "http://css-devops.sh.intel.com/download/dry-run/mvp-tdx-stack-host-rhel-9/x86_64/libvirt-libs-8.6.0-v3.4.mvp14.el9.x86_64.rpm",
+        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/libvirt-devel-8.6.0-v3.5.mvp15.el9.x86_64.rpm",
     ],
 )
 
@@ -3135,6 +3126,14 @@ rpm(
     urls = [
         "http://mirror.stream.centos.org/9-stream/AppStream/aarch64/os/Packages/libvirt-libs-9.0.0-3.el9.aarch64.rpm",
         "https://storage.googleapis.com/builddeps/23d9ffd8dfc4742b7211029bda9ea6d527bf0cf174d561ea8945e5caeb4e9290",
+    ],
+)
+
+rpm(
+    name = "libvirt-libs-23__8.6.0-v3.5.mvp15.el9.x86_64",
+    sha256 = "f4e76d7028dd0686f17598ec07686c49ea0ce48719d5630016d1faf715444fac",
+    urls = [
+        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/libvirt-libs-8.6.0-v3.5.mvp15.el9.x86_64.rpm",
     ],
 )
 
@@ -3537,10 +3536,10 @@ rpm(
 )
 
 rpm(
-    name = "ovmf-0__mvp13-ww27.2.el9.x86_64",
-    sha256 = "230f48e5453e83e2be9303b10a2ebadad952be9c8ddaf0043ff66e263bf7ced6",
+    name = "ovmf-0__mvp15-ww36.2.el9.x86_64",
+    sha256 = "291efd96274965a905adef391abf4f99aca6799bd0965880363784d81c6785fe",
     urls = [
-        "http://css-devops.sh.intel.com/download/dry-run/mvp-tdx-stack-host-rhel-9/noarch/ovmf-mvp13-ww27.2.el9.noarch.rpm",
+        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/noarch/ovmf-mvp15-ww36.2.el9.noarch.rpm",
     ],
 )
 
@@ -4150,10 +4149,10 @@ rpm(
 )
 
 rpm(
-    name = "qemu-img-49__7.2.0-v3.3.mvp21.el9.x86_64",
-    sha256 = "4fe82d2cbde0dae4c48ebb128fcfbc2bab7422ae5514868a2061335d6e1b0010",
+    name = "qemu-img-49__7.2.0-v3.5.mvp23.el9.x86_64",
+    sha256 = "28bcd556bc37ff1323746c19b915f39422e64e8714d16cb87130ad1702aba214",
     urls = [
-        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/qemu-img-7.2.0-v3.3.mvp21.el9.x86_64.rpm",
+        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/qemu-img-7.2.0-v3.5.mvp23.el9.x86_64.rpm",
     ],
 )
 
@@ -4167,10 +4166,10 @@ rpm(
 )
 
 rpm(
-    name = "qemu-kvm-common-49__7.2.0-v3.3.mvp21.el9.x86_64",
-    sha256 = "81239600e89cc5b7cec2f3065f61b5014904ad249757c22f43dab194e3b97d1c",
+    name = "qemu-kvm-common-49__7.2.0-v3.5.mvp23.el9.x86_64",
+    sha256 = "d24ed45f91bf4385c5e5de70eb446a34354db880f0c9bb16587c1a9e00e383a0",
     urls = [
-        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/qemu-kvm-common-7.2.0-v3.3.mvp21.el9.x86_64.rpm",
+        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/qemu-kvm-common-7.2.0-v3.5.mvp23.el9.x86_64.rpm",
     ],
 )
 
@@ -4184,10 +4183,10 @@ rpm(
 )
 
 rpm(
-    name = "qemu-kvm-core-49__7.2.0-v3.3.mvp21.el9.x86_64",
-    sha256 = "ddb862b03d7494da45ad6760faef794a1a34a4e89b7103a30a0eb5ee4f284755",
+    name = "qemu-kvm-core-49__7.2.0-v3.5.mvp23.el9.x86_64",
+    sha256 = "27feeff4a15263e90e5c7f7afdb683dcdd1c67b1b29b3725fce55604c0422ede",
     urls = [
-        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/qemu-kvm-core-7.2.0-v3.3.mvp21.el9.x86_64.rpm",
+        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/qemu-kvm-core-7.2.0-v3.5.mvp23.el9.x86_64.rpm",
     ],
 )
 
@@ -4210,10 +4209,10 @@ rpm(
 )
 
 rpm(
-    name = "qemu-kvm-device-usb-redirect-49__7.2.0-v3.3.mvp21.el9.x86_64",
-    sha256 = "b66ac9d1e152e3fb3b22bcd265900ba1960e8c6a328583e46304cba737a95b32",
+    name = "qemu-kvm-device-usb-redirect-49__7.2.0-v3.5.mvp23.el9.x86_64",
+    sha256 = "030f89624ca2f54e41ccd5c4a23b7e998979bbb0462c706ebaa175f15c08d790",
     urls = [
-        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/qemu-kvm-device-usb-redirect-7.2.0-v3.3.mvp21.el9.x86_64.rpm",
+        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/qemu-kvm-device-usb-redirect-7.2.0-v3.5.mvp23.el9.x86_64.rpm",
     ],
 )
 
@@ -4227,10 +4226,10 @@ rpm(
 )
 
 rpm(
-    name = "qemu-pr-helper-49__7.2.0-v3.3.mvp21.el9.x86_64",
-    sha256 = "a3ca59a7af1941a66c2d62a39f9dcd0c956cf1b4575a35c4974b66f03a3ebff6",
+    name = "qemu-pr-helper-49__7.2.0-v3.5.mvp23.el9.x86_64",
+    sha256 = "2cd7f4b9ea96e50e8c493f99c8a7aadef7fe500c8e078c433aa4d8e76afcbe17",
     urls = [
-        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/qemu-pr-helper-7.2.0-v3.3.mvp21.el9.x86_64.rpm",
+        "http://css-devops.sh.intel.com/download/mvp-stacks/1.5/2023ww38/mvp-tdx-stack-host-rhel-9/x86_64/qemu-pr-helper-7.2.0-v3.5.mvp23.el9.x86_64.rpm",
     ],
 )
 
@@ -4385,10 +4384,10 @@ rpm(
 )
 
 rpm(
-    name = "selinux-policy-0__38.1.22-1.el9.x86_64",
-    sha256 = "c4ee2c1f4a3324d19642943c2a871c0ab4952b07b255f39a7a4fea74a62e0d82",
+    name = "selinux-policy-0__38.1.23-1.el9.x86_64",
+    sha256 = "f5da7802b5baed97104ab89e34b873219f27758759661c469134ac509b513f95",
     urls = [
-        "http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/os/Packages/selinux-policy-38.1.22-1.el9.noarch.rpm",
+        "http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/os/Packages/selinux-policy-38.1.23-1.el9.noarch.rpm",
     ],
 )
 
@@ -4402,10 +4401,10 @@ rpm(
 )
 
 rpm(
-    name = "selinux-policy-targeted-0__38.1.22-1.el9.x86_64",
-    sha256 = "a810056dc595050f52f880ea60138a20d54167bb7095eae6ca317384b4f52d86",
+    name = "selinux-policy-targeted-0__38.1.23-1.el9.x86_64",
+    sha256 = "6dddcb1330ec41722b5a32c43fad06c3ff31ab35f30d423dc04962d981a541f1",
     urls = [
-        "http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/os/Packages/selinux-policy-targeted-38.1.22-1.el9.noarch.rpm",
+        "http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/os/Packages/selinux-policy-targeted-38.1.23-1.el9.noarch.rpm",
     ],
 )
 
