@@ -21,7 +21,7 @@ package launchsecurity
 
 const (
 	// Guest policy as defined in Intel TDX API specification
-	TDXPolicyNoDebug = "0x10000000"
+	TDXPolicyNoDebug = "0x10000001"
 )
 
 func TDXPolicy() string {

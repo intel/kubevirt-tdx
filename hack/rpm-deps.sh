@@ -9,10 +9,10 @@ source hack/config.sh
 LIBVIRT_VERSION=${LIBVIRT_VERSION:-0:9.0.0-3.el9}
 QEMU_VERSION=${QEMU_VERSION:-17:7.2.0-14.el9}
 SEABIOS_VERSION=${SEABIOS_VERSION:-0:1.16.1-1.el9}
-EDK2_VERSION=${EDK2_VERSION:-0:20221207gitfff6d81270b5-9}
+EDK2_VERSION=${EDK2_VERSION:-0:20231122-3.el9}
 LIBGUESTFS_VERSION=${LIBGUESTFS_VERSION:-1:1.48.4-4.el9}
 GUESTFSTOOLS_VERSION=${GUESTFSTOOLS_VERSION:-0:1.48.2-8.el9}
-PASST_VERSION=${PASST_VERSION:-0:0^20230222.g4ddbcb9-1.el9}
+PASST_VERSION=${PASST_VERSION:-0:0^20230818.g0af928e-4.el9}
 VIRTIOFSD_VERSION=${VIRTIOFSD_VERSION:-0:1.5.0-1.el9}
 SWTPM_VERSION=${SWTPM_VERSION:-0:0.8.0-1.el9}
 SINGLE_ARCH=${SINGLE_ARCH:-""}
@@ -93,7 +93,7 @@ launcherbase_main="
   swtpm-tools-${SWTPM_VERSION}
 "
 launcherbase_x86_64="
-  ovmf-${EDK2_VERSION}
+  edk2-ovmf-${EDK2_VERSION}
   qemu-kvm-device-usb-redirect-${QEMU_VERSION}
   seabios-${SEABIOS_VERSION}
 "
@@ -138,7 +138,7 @@ libguestfstools_main="
   seabios-${SEABIOS_VERSION}
 "
 libguestfstools_x86_64="
-  ovmf-${EDK2_VERSION}
+  edk2-ovmf-${EDK2_VERSION}
 "
 libguestfstools_extra="
   selinux-policy

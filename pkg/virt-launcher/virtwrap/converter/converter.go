@@ -1463,7 +1463,8 @@ func Convert_v1_VirtualMachineInstance_To_api_Domain(vmi *v1.VirtualMachineInsta
 		if domain.Spec.MemoryBacking == nil {
 			domain.Spec.MemoryBacking = &api.MemoryBacking{}
 		}
-		domain.Spec.MemoryBacking.Source = &api.MemoryBackingSource{Type: "memfd-private"}
+		domain.Spec.MemoryBacking.Source = &api.MemoryBackingSource{Type: "anonymous"}
+		domain.Spec.MemoryBacking.Access = &api.MemoryBackingAccess{Mode: "private"}
 	}
 
 	volumeIndices := map[string]int{}
@@ -1792,6 +1793,18 @@ func Convert_v1_VirtualMachineInstance_To_api_Domain(vmi *v1.VirtualMachineInsta
 					Target: &api.ConsoleTarget{
 						Type: &consoleType,
 						Port: &consolePort,
+					},
+				},
+			}
+			domain.Spec.Devices.Serials = []api.Serial{
+				{
+					Type: "unix",
+					Target: &api.SerialTarget{
+						Port: &consolePort,
+					},
+					Source: &api.SerialSource{
+						Mode: "bind",
+						Path: fmt.Sprintf("/var/run/kubevirt-private/%s/virt-serial%d", vmi.ObjectMeta.UID, consolePort),
 					},
 				},
 			}
